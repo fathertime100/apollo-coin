@@ -39,7 +39,7 @@ CONGRATULATIONS, you've just completed the hardest part of setting up this maste
 1.  Set up an account on either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC).
 
 NOTE: both of these exchanges have very poor interfaces with virtually no feedback mechanisms or alerts, so just be patient after every click and wait for something to change on the screen, trudge through the mud, you'll eventually get your coins.  
-2.  Look up the current price of <a href="https://graviex.net/markets/xapbtc" target="_blank">BTC to XAP</a> [BTC to XAP](https://graviex.net/markets/xapbtc) and calculate how much BTC you'll need to transfer to the exchange in order to purchase 25,100 XAP.  
+2.  Look up the current price of <a href=https://graviex.net/markets/xapbtc target=_blank>BTC to XAP</a> [BTC to XAP](https://graviex.net/markets/xapbtc) and calculate how much BTC you'll need to transfer to the exchange in order to purchase 25,100 XAP.  
 3.  Transfer BTC to the exchange from one of your BTC wallets.  Note that currently, BTC transfers take about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the transaction as neither exchange displays incoming transactions or their confirmations.
 4.  Initiate a buy order and wait for the order to be filled.  Depending on the market volume, this can take between 1 to 30 minutes.
 
