@@ -32,8 +32,6 @@ Please check Apollon is running with the following command: systemctl status Apo
 =============================================================================================
 ```
 
-CONGRATULATIONS, you've just completed the hardest part of setting up this masternode.
-
 6. Copy and paste this information somewhere safe.  You will need this information for the steps below. 
 
 ***
