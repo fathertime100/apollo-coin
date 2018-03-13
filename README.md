@@ -17,6 +17,7 @@ bash apollon_install.sh
 
 Installing and setting up firewall to allow ingress on port 12116
 
+```
 ================================================================================================================================
 Apollon Masternode is up and running listening on port 12116.
 Configuration file is: /root/.Apollon/Apollon.conf
@@ -26,6 +27,7 @@ VPS_IP:PORT 45.32.224.15:12116
 MASTERNODE PRIVATEKEY is: 69XSr9H8ZNuDpwDEvoN9EBst5MmEaWBqUrzhbwR1qKVmcbw1E7t
 Please check Apollon is running with the following command: systemctl status Apollon.service
 ================================================================================================================================
+```
 
 YOU'RE DONE THE HARD PART!
 
