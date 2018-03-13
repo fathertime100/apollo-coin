@@ -2,7 +2,10 @@
 This step-by-step guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on this.  This guide will help you quickly and easily install an [Apollon Masternode](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04 and it will help you set up your wallet with the coins to support the masternode.  Use this guide at your own risk.
 ***
 
-## Masternode Installation
+## SETUP
+1.  Create a blank text file or notepad on your computer that you can use throughout this tutorial.  We will copy several values to it and then you will save it later for reference in the event that you need to perform any masternode maintenance.  
+
+## A.  Masternode Installation
 1. Setup a Linux Ubuntu 16.04 virtual private server (VPS) from [Vultr](https://www.vultr.com/?ref=7348757).  This server costs $5 USD / month.  If you need help setting up a VPS with Vultr, please watch this [video on how to set up a Vultr VPS with Ubuntu 16.04](https://www.youtube.com/).
 2. SSH into your server using Terminal on a Mac or [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows.  If this is your first time doing this, please watch the video in step 1.
 3.  Copy and paste the below code snippet into your SSH session and hit enter.  This will download the masternode installation script onto your VPS.  
@@ -24,7 +27,7 @@ Configuration file is: /root/.Apollon/Apollon.conf
 Start: systemctl start Apollon.service
 Stop: systemctl stop Apollon.service
 VPS_IP:PORT 45.32.224.15:12116
-MASTERNODE PRIVATEKEY is: 69XSr9H8ZNuDpwDEvoN9EBst5MmEaWBqUrzhbwR1qKVmcbw1E7t
+MASTERNODE PRIVATEKEY is: adfwivhw0ru340230fMZdasdfasdweav3459834u5B1kxHV2398aav93
 Please check Apollon is running with the following command: systemctl status Apollon.service
 =============================================================================================
 ```
@@ -35,44 +38,52 @@ CONGRATULATIONS, you've just completed the hardest part of setting up this maste
 
 ***
 
-## Purchase 25,000 Apollo Coins (+100 coins for exchange and transfer fees)
-1.  Set up an account on either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC).
-
-NOTE: both of these exchanges have very poor interfaces with virtually no feedback mechanisms or alerts, so just be patient after every click and wait for something to change on the screen, trudge through the mud, you'll eventually get your coins.  
+## B. Purchase 25,000 Apollo Coins (+100 coins for exchange and transfer fees)
+1.  Set up an account on either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC).  NOTE: both of these exchanges have very poor interfaces with virtually no feedback mechanisms or alerts, so just be patient after every click and wait for something to change on the screen, trudge through the mud, you'll eventually get your coins.  
 2.  Look up the current price of [BTC to XAP](https://graviex.net/markets/xapbtc) and calculate how much BTC you'll need to transfer to the exchange in order to purchase **25,100 XAP**.  
 3.  Transfer BTC to the exchange from one of your BTC wallets.  Note that currently, BTC transfers take about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the transaction as neither exchange displays incoming transactions or their confirmations.
 4.  Initiate a buy order and wait for the order to be filled.  Depending on the market volume, this can take between 1 to 30 minutes.
 
 Once you have your coins, WAIT, do not transfer them anywhere yet,.
 
-## Windows Desktop wallet setup
-###(DO NOT USE THE MAC WALLET, IT DOES NOT WORK AS OF 12-MAR-2018)
+***
+
+## C. Desktop wallet setup
 
 After the MN is up and running, you need to configure a windows desktop wallet accordingly. Here are the steps:  
 
 **WINDOWS USERS**
 1. Download the wallet from here: [Apollon Windows Wallet](https://github.com/apollondeveloper/ApollonCoin/releases/download/1.0.3/Apollon-qt.exe)
 2. Open the Apollon Desktop Wallet.  
-3. Go to RECEIVE and create a New Address: **MN1**  
-4. THIS IS VERY IMPORTANT, DO NOT SEND 25,100 COINS, ONLY SEND **25000** XAP TO **MN1**.  
-5. Wait for 16 confirmations.  
-6. Go to **Help -> "Debug Window - Console"**  
-7. Type the following command: **masternode outputs**  
-8. Go to **Masternodes** tab  
-9. Click **Create** and fill the details:  
+3. Go to RECEIVE and create a New Address with the label: **MN1**  
+4. Copy and paste the public address to your working file.  Note: this is also the public address of your masternode that you will use to look up your masternode on [https://xap.overemo.com/masternodes](https://xap.overemo.com/masternodes).  It will not be published yet.  
+5. Go to the exchange you purchased your coins on and set up a withdrawal of **25,000** coins EXACTLY to the public address you just copied from your Desktop Wallet.  **THIS IS VERY IMPORTANT, DO NOT SEND 25,100 COINS, ONLY SEND 25000 XAP TO MN1.  ALSO, YOU MUST DO THIS IN A SINGLE TRANSACTION.  YOU CAN NOT MAKE TWO 12,500 TRANSACTIONS TO THIS ADDRESS, THE SERVER WILL NOT REGISTER THIS AS A WALLET STAKE.  A SINGLE RECEIVING ADDRESS MUST ONLY HAVE ONE TRANSACTION OF 25,000 XAP SENT TO IT.  NEVER SEND ANY OTHER XAP TO THIS PUBLIC ADDRESS.  IF YOU WANT TO SEND ANY MORE XAP TO YOUR WALLET, CREATE A NEW ADDRESS.**
+6. Wait for 16 confirmations.  To check the status of your transfer, go to your Desktop Wallet and go to **Transactions**.  Once you have initiated the transfer from the exchange, it will take a few minutes to show up in your wallet.  Once it has, you can double click on it and a 'Transaction details' pop-up will appear.  Under here, you will see **Status:** and it will tell you the number of confirmations that your transaction has achieved.  This pop-up does not update automatically, so close and reopen this pop-up until the number of confirmations is 16 or higher.   
+7. Go to **Help -> "Debug Window - Console"**  
+8. Enter the following command: **masternode outputs**     The result will look something like this:
+```
+{
+    "b35aaf4fba02ea64c239ofasdoe8f55abc66cb26a8930656ad8020334bf871" : "1"
+}
+```
+9. Copy and paste this information into your working file.
+9. Go to **Masternodes** tab  
+10. Click **Create** and fill these details:  
 * Alias: **MN1**  
-* Address: **VPS_IP:PORT**  
-* Privkey: **Masternode Private Key**  
+* Address: **VPS_IP:PORT**  from step A1 above.  Use port **12116**
+* Privkey: **Masternode Private Key** from step A5 above, DO NOT USE THE PRIVATE KEY IN THIS DOCUMENT, USE THE ONE YOU CREATED.
 * TxHash: **First value from Step 6**  
-* Output index:  **Second value from Step 6**  
+* Output index:  **Second value from Step 6, either a 1 or a 0**  
 * Reward address: leave blank  
 * Reward %: leave blank  
-9. Click **OK** to add the masternode  
-10. Click **Start All**  
+11. Click **OK** to add the masternode  
+12. Click **Start All**  
 ***
 
 **MAC USERS**
-In order to keep your Masternode and your wallet seperate (recommended), you'll need to take on a little more cost, but you'll be able to use this for other masternode wallets that don't work on Mac yet.  
+###(DO NOT USE THE MAC WALLET, IT DOES NOT WORK AS OF 12-MAR-2018)
+
+In order to keep your Masternode and your wallet seperate (recommended), you'll need to take on a little more cost, but you'll be able to use this for other masternode wallets that don't work on Mac yet as well. 
 1.  Setup a windows VPS on [Virmach](https://virmach.com/windows-remote-desktop-vps/)
 2.  Choose SSD2G for 10$ per month
 3.  At checkout, use this coupon: LEBBF2016G2     Then it will only cost $5 USD per month.
@@ -84,12 +95,77 @@ In order to keep your Masternode and your wallet seperate (recommended), you'll 
 
 ***
 
+## D. COMPLETION CHECK & MAINTENANCE
+You've done it, you've just set up a masternode for Apollo.  Now we need to check to ensure that it is operating properly and communicating with the other servers on in the network.  In the future you can also use these commands to check your server status and ensure that things are running as they should be.  
 
-## Usage:
+**MAINTENANCE COMMAND 1: SERVER STATUS**
+Copy and paste this command into terminal and press enter.
 ```
 Apollond masternode status  
+```
+This will give you a response that looks like this:
+```
+{
+    "vin" : "CTxIn(COutPoint(b35aaf4fba, 1), scriptSig=)",
+    "service" : "144.202.88.54:12116",
+    "status" : 9,
+    "pubKeyMasternode" : "AKCeCBJm7GXHX8okPsSJ65cp9iKpefxnD7",
+    "notCapableReason" : "Could not find suitable coins!"
+}
+```
+There is only one important field here, 'status'.
+
+**Status**
+Ensure that your Masternode 'status' is either 8 or 9.  
+Here is the list of possible Masternode statuses:
+
+1 = Your masternode has not been processed by the network yet.  Please wait.
+2 = Your masternode is active.
+3 = Your masternode is inactive.
+4 = Your masternode has stopped.
+5 = Your masternode seed transaction hasn't reached the minimum of 16 confirmations.  
+6 = Your masternode port is closed.
+7 = Your masternode port is open.
+8 = Your masternode is syncing to the network.
+9 = Your masternode is remotely enabled and active.
+
+There are two very confusing fields here, the first is 'pubKeyMasternode'.  Given the name of this field, one would expect that this field would be the one that is listed on the masternode public list here: [https://xap.overemo.com/masternodes](https://xap.overemo.com/masternodes).  It is not!  To look up your masternode on this list, use the public key you created in step C3.  
+
+The other is 'notCapableReason'. notCapableReason seems to store a text string from the last found error on the server.  With that said, if your status is 8 or 9 and you still see a strange error here, like the one above, ignore it.  It is lkely just the last error that your server encountered before going live.
+
+**pubKeyMasternodes**
+You might be temped to look up your masternode using the pubKeyMasternode field on .  Don't bother, this is not the public key that is advertised on this list.  If you want to look up your masternode status on this public list, see below.
+
+MAINTENANCE COMMAND 2
+```
 Apollond getinfo
 ```
+will result in a response that looks something like this:
+```
+{
+    "version" : "v1.0.3.0-60028",
+    "protocolversion" : 60028,
+    "walletversion" : 60000,
+    "balance" : 0.00000000,
+    "darksend_balance" : 0.00000000,
+    "newmint" : 0.00000000,
+    "stake" : 0.00000000,
+    "blocks" : 19827,
+    "timeoffset" : 0,
+    "moneysupply" : 19507450.00000000,
+    "connections" : 29,
+    "proxy" : "",
+    "ip" : "144.202.88.54",
+    "difficulty" : 27482.97398816,
+    "testnet" : false,
+    "keypoololdest" : 1520844901,
+    "keypoolsize" : 101,
+    "paytxfee" : 0.01000000,
+    "mininput" : 0.00000000,
+    "errors" : ""
+}
+```
+
 Also, if you want to check/start/stop **Apollon**, run one of the following commands as **root**:
 
 ```
