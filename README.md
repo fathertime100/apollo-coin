@@ -1,19 +1,19 @@
-# Apollon Coin Easy Install Script
-This easy install shell script was adopted from Zoldur's script.  Thank-you to him for doing most of the work.  The script helps you quickly and easily install an [Apollon Masternode](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
+# Apollon Coin Step-by-Step Install Instructions
+This step-by-step guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on this.  This guide will help you quickly and easily install an [Apollon Masternode](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04 and it will help you set up your wallet with the coins to support the masternode.  Use this guide at your own risk.
 ***
 
-## Installation
-1. Order a Linux Ubuntu 16.04 virtual private server (VPS) from [Vultr](https://www.vultr.com/?ref=7348757).  This server costs $5 USD / month and is very easy to setup.  If you need help setting up a VPS for your masternode and creating an SSH key, I will post a video on how to do this safely and securely in another video shortly.  
-2. SSH into your server using Terminal on a Mac or [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows.
-3.  Copy and past this code into your SSH session and hit enter.  This will download the masternode installation script onto your VPS.  
+## Masternode Installation
+1. Setup a Linux Ubuntu 16.04 virtual private server (VPS) from [Vultr](https://www.vultr.com/?ref=7348757).  This server costs $5 USD / month.  If you need help setting up a VPS with Vultr, please watch this [video on how to set up a Vultr VPS with Ubuntu 16.04](https://www.youtube.com/).
+2. SSH into your server using Terminal on a Mac or [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows.  If this is your first time doing this, please watch the video in step 1.
+3.  Copy and paste the below code snippet into your SSH session and hit enter.  This will download the masternode installation script onto your VPS.  
 ```
 wget -q https://raw.githubusercontent.com/fathertime100/apollo-coin/master/apollon_install.sh
 ```
-4.  Install your server.  Note that this process will take between 30 and 45 minutes to complete.  Copy and paste this code into your SSH session and press enter. 
+4.  Install your server.  Copy and paste this code into your SSH session and press enter. Note that this process will take between 30 and 45 minutes to complete.  
 ```
 bash apollon_install.sh
 ```
-5.  **Server Private Key**.  After the script installs a number of programs, it will ask you to "Enter your Apollon Masternode Private Key. Leave it blank to generate a new Masternode Private Key for you:".  Do as it says, leave it blank and press enter.  It will take another minute to complete this task and then you'll be presented with a result that will look like this:
+5.  **Server Private Key**.  After the script installs a number of programs, it will ask you to **"Enter your Apollon Masternode Private Key. Leave it blank to generate a new Masternode Private Key for you:"**.  Leave it blank and press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look like this:
 
 ```
 Installing and setting up firewall to allow ingress on port 12116
@@ -29,17 +29,19 @@ Please check Apollon is running with the following command: systemctl status Apo
 =============================================================================================
 ```
 
-YOU'RE DONE THE HARD PART!
+CONGRATULATIONS, you've just completed the hardest part of setting up this masternode.
 
-6. Take this information and copy and paste it somewhere safe.  Preferrably onto an encrypted hard drive.  You will need this information for the steps below. 
-
+6. Copy and paste this information somewhere safe.  You will need this information for the steps below. 
 
 ***
 
-## Purchase 25,000 Apollo Coins (+100 coins for exchange and transfer fees)
-You can purchase your coins from either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC).  They exchanges both have very poor interfaces with virtually no feedback mechanisms or alerts, so just be patient after every click and wait for something to change on the screen, trudge through the mud, you'll eventually get your coins.  Both only provide BTC to XAP exchange, so you'll have to transfer BTC from one of your BTC wallets, it takes about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the transaction as neither exchange displays incoming transactions or their confirmations.
+## Purchase 25,100 Apollo Coins (+100 coins for exchange and transfer fees)
+1.  Set up an account on either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC).
 
-Once you've set up your account and transferred enough BTC to purchase 25,100 XAP, initiate a buy order and wait for the order to be filled.  Depending on the market volume, this can take between 1 to 30 minutes.
+NOTE: both of these exchanges have very poor interfaces with virtually no feedback mechanisms or alerts, so just be patient after every click and wait for something to change on the screen, trudge through the mud, you'll eventually get your coins.  
+2.  Look up the current price of <a href="https://graviex.net/markets/xapbtc" target="_blank">BTC to XAP</a> [BTC to XAP](https://graviex.net/markets/xapbtc) and calculate how much BTC you'll need to transfer to the exchange in order to purchase 25,100 XAP.  
+3.  Transfer BTC to the exchange from one of your BTC wallets.  Note that currently, BTC transfers take about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the transaction as neither exchange displays incoming transactions or their confirmations.
+4.  Initiate a buy order and wait for the order to be filled.  Depending on the market volume, this can take between 1 to 30 minutes.
 
 Once you have your coins, WAIT, do not transfer them anywhere yet,.
 
@@ -52,7 +54,7 @@ After the MN is up and running, you need to configure a windows desktop wallet a
 1. Download the wallet from here: [Apollon Windows Wallet](https://github.com/apollondeveloper/ApollonCoin/releases/download/1.0.3/Apollon-qt.exe)
 2. Open the Apollon Desktop Wallet.  
 3. Go to RECEIVE and create a New Address: **MN1**  
-4. Send **25000** XAP to **MN1**.  
+4. THIS IS VERY IMPORTANT, DO NOT SEND 25,100 COINS, ONLY SEND **25000** XAP TO **MN1**.  
 5. Wait for 16 confirmations.  
 6. Go to **Help -> "Debug Window - Console"**  
 7. Type the following command: **masternode outputs**  
