@@ -3,20 +3,34 @@ This easy install shell script was adopted from Zoldur's script.  Thank-you to h
 ***
 
 ## Installation
+1. Order a Linux Ubuntu 16.04 server from [Vultr](https://www.vultr.com/?ref=7348757).  This costs $5 USD / month and is very easy to setup.  If you need help setting up a VPS for your masternode, I will post a video on how to do this safely and securely in another video shortly.  
+2. SSH into your server using Terminal on a Mac (built-in) or Putty on Windows, which you can download [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+
+
 ```
-wget -q https://raw.githubusercontent.com/zoldur/Apollon/master/apollon_install.sh  
+wget -q https://raw.githubusercontent.com/fathertime100/apollo-coin/master/apollon_install.sh
 bash apollon_install.sh
 ```
 ***
 
-## Desktop wallet setup  
+## Purchase 25,000 Apollo Coins (+100 coins for exchange and transfer fees)
+You can purchase your coins from either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC).  They exchanges both have very poor interfaces with virtually no feedback mechanisms or alerts, so just be patient after every click and wait for something to change on the screen, trudge through the mud, you'll eventually get your coins.  Both only provide BTC to XAP exchange, so you'll have to transfer BTC from one of your BTC wallets, it takes about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the transaction as neither exchange displays incoming transactions or their confirmations.
 
-After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
-1. Open the Apollon Desktop Wallet.  
-2. Go to RECEIVE and create a New Address: **MN1**  
-3. Send **25000** XAP to **MN1**.  
-4. Wait for 16 confirmations.  
-5. Go to **Help -> "Debug Window - Console"**  
+Once you've set up your account and transferred enough BTC to purchase 25,100 XAP, initiate a buy order and wait for the order to be filled.  Depending on the market volume, this can take between 1 to 30 minutes.
+
+Once you have your coins, WAIT, do not transfer them anywhere yet,.
+
+## Windows Desktop wallet setup  (DO NOT USE THE MAC WALLET, IT DOES NOT WORK AS OF 12-MAR-2018)
+
+After the MN is up and running, you need to configure a windows desktop wallet accordingly. Here are the steps:  
+
+WINDOWS USERS
+1. Download the wallet from here: [Apollon Windows Wallet](https://github.com/apollondeveloper/ApollonCoin/releases/download/1.0.3/Apollon-qt.exe)
+2. Open the Apollon Desktop Wallet.  
+3. Go to RECEIVE and create a New Address: **MN1**  
+4. Send **25000** XAP to **MN1**.  
+5. Wait for 16 confirmations.  
+6. Go to **Help -> "Debug Window - Console"**  
 6. Type the following command: **masternode outputs**  
 7. Go to **Masternodes** tab  
 8. Click **Create** and fill the details:  
