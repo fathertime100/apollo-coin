@@ -13,12 +13,12 @@ wget -q https://raw.githubusercontent.com/fathertime100/apollo-coin/master/apoll
 ```
 bash apollon_install.sh
 ```
-5.  **Server Private Key**.  After the script installs a number of programs, it will ask you to "Enter your Apollon Masternode Private Key. Leave it blank to generate a new Masternode Private Key for you:".  Do as it says, leave it blank and press enter.  It will take another minute to complete this task and then you'll be presented with a result that will look something like this:
-
-Installing and setting up firewall to allow ingress on port 12116
+5.  **Server Private Key**.  After the script installs a number of programs, it will ask you to "Enter your Apollon Masternode Private Key. Leave it blank to generate a new Masternode Private Key for you:".  Do as it says, leave it blank and press enter.  It will take another minute to complete this task and then you'll be presented with a result that will look like this:
 
 ```
-================================================================================================================================
+Installing and setting up firewall to allow ingress on port 12116
+
+=============================================================================================
 Apollon Masternode is up and running listening on port 12116.
 Configuration file is: /root/.Apollon/Apollon.conf
 Start: systemctl start Apollon.service
@@ -26,12 +26,12 @@ Stop: systemctl stop Apollon.service
 VPS_IP:PORT 45.32.224.15:12116
 MASTERNODE PRIVATEKEY is: 69XSr9H8ZNuDpwDEvoN9EBst5MmEaWBqUrzhbwR1qKVmcbw1E7t
 Please check Apollon is running with the following command: systemctl status Apollon.service
-================================================================================================================================
+=============================================================================================
 ```
 
 YOU'RE DONE THE HARD PART!
 
-Now take this information and copy and paste it somewhere safe.  Preferrably onto an encrypted hard drive.  You will need this information for the steps below. 
+6. Take this information and copy and paste it somewhere safe.  Preferrably onto an encrypted hard drive.  You will need this information for the steps below. 
 
 
 ***
