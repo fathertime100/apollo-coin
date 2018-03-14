@@ -23,7 +23,7 @@ function compile_node() {
   sleep 5
   git clone  $COIN_REPO $TMP_FOLDER
   cd $TMP_FOLDER/src
-  make -f makefile.unix | pv -l -s EXPECTED_LINES
+  make -f makefile.unix | pv -l EXPECTED_LINES
   compile_error
   strip Apollond
   cp Apollond /usr/local/bin
@@ -215,16 +215,17 @@ fi
 }
 
 function prepare_system() {
-echo -e "Preparing the system to install a ${GREEN}$COIN_NAME${NC} masternode."
-echo -e "Several background tasks are currently running.  This entire process will take 15 to 20 minutes to complete."
+echo -e "Preparing the system to install an ${GREEN}$COIN_NAME${NC} masternode."
+echo -e "Several background tasks are currently running."
+echo -e "This entire process will take 15 to 20 minutes to complete."
 echo -e "Leave this terminal session open until you are prompted to generate your private key."
 echo -e "The next prompt will occur in 3-4 minutes.  Please wait"
-apt-get update >/dev/null 2>&1
+apt-get update >/dev/null 2>&1 | pv
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
-apt install -y software-properties-common >/dev/null 2>&1
-echo -e "${GREEN}Adding bitcoin PPA repository"
-apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1
+apt install -y software-properties-common >/dev/null 2>&1 | pv
+echo -e "${GREEN}Adding the Bitcoin PPA repository"
+apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1 | pv
 echo -e "Continuing to install the required software packages.${NC}"
 echo -e "In a few moments you will begin to see a number of responses, please allow these to complete.${NC}"
 apt-get update >/dev/null 2>&1
@@ -298,9 +299,9 @@ function setup_node() {
 apt-get install pv
 
 clear
+clear
 
 checks
-
 prepare_system
 create_swap
 compile_node
