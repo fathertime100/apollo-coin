@@ -19,7 +19,8 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 function compile_node() {
-  echo -e "Prepare to compile $COIN_NAME"
+  echo -e "Preparing to compile $COIN_NAME"
+  sleep 5
   git clone  $COIN_REPO $TMP_FOLDER
   cd $TMP_FOLDER/src
   make -f makefile.unix
