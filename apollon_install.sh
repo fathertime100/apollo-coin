@@ -19,8 +19,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 function compile_node() {
-  echo -e "Preparing to compile $COIN_NAME"
-  sleep 5
+  echo -e "Preparing to compile $COIN_NAME."
   git clone  $COIN_REPO $TMP_FOLDER
   cd $TMP_FOLDER/src
   make -f makefile.unix | pv -l EXPECTED_LINES
@@ -219,7 +218,7 @@ echo -e "Preparing the system to install an ${GREEN}$COIN_NAME${NC} masternode."
 echo -e "Several background tasks are currently running."
 echo -e "This entire process will take 15 to 20 minutes to complete."
 echo -e "Leave this terminal session open until you are prompted to generate your private key."
-echo -e "The next prompt will occur in 3-4 minutes.  Please wait"
+echo -e "The next prompt will occur in 3-4 minutes.  Please wait."
 apt-get update >/dev/null 2>&1 | pv
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
