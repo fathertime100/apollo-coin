@@ -31,24 +31,45 @@ costs $5 USD / month.  If you need help setting up a VPS with Vultr, please watc
 ```
 wget -q https://raw.githubusercontent.com/fathertime100/apollon/master/apollon_install.sh
 ```
-4.  Install your server. Copy and paste the below command into your SSH session and press enter. Note that this process will take between about 30 minutes to complete.  
+4.  Install your server. Copy and paste the below command into your SSH session and press enter. Note that this process will take between about 30 minutes to complete.  Go and get a coffee.
 ```
 bash apollon_install.sh
 ```
-5.  **Server Private Key**.  After the script installs a number of programs, it will ask you to **"Enter your Apollon Masternode Private Key. Leave it blank to generate a new Masternode Private Key for you:"**.  Leave it blank and press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look like this:
+5.  **Server Private Key**.  After the script installs a number of programs, it will ask you to **"Press enter to generate your Masternode Private Key."**.  Press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look like this:
 
 ```
 Installing and setting up firewall to allow ingress on port 12116
 
 =============================================================================================
-Apollon Masternode is up and running listening on port 12116.
-Configuration file is: /root/.Apollon/Apollon.conf
-Start: systemctl start Apollon.service
-Stop: systemctl stop Apollon.service
-VPS_IP:PORT 45.32.224.15:12116
-MASTERNODE PRIVATEKEY is: adfwivhw0ru340230fMZdasdfasdweav3459834u5B1kxHV2398aav93
-Please check Apollon is running with the following command: systemctl status Apollon.service
+                                  CONGRATULATIONS!!!
 =============================================================================================
+
+MASTERNODE SERVICE DETAILS
+
+Your Apollon Masternode is up and running listening on port 12116.
+The server configuration file is located at: /root/.Apollon/Apollon.conf
+Your server IP Address and Port are: 45.32.224.15:12116
+YOUR MASTERNODE PRIVATEKEY is: adfwivhw0ru340230fMZdasdfasdweav3459834u5B1kxHV2398aav93
+
+=============================================================================================
+
+STARTING AND STOPPING THE MASTERNODE SERVICE
+
+To start the server, run this command: systemctl start Apollon.service
+To stop the server, run this command: systemctl stop Apollon.service
+
+=============================================================================================
+
+CHECKING THE STATUS OF YOUR MASTERNODE
+
+To check if your masternode is running, run this command: systemctl status Apollon
+To check the number of blocks synced to your masternode, run this command: Apollond getinfo
+To check the status of your masternode, run this command: Apollond masternode status
+
+=============================================================================================
+
+Please copy and paste the above data into a file and store in a secure location.
+You will need this information to complete your installation and to maintain your masternode.
 ```
 
 6. Copy and paste this information somewhere safe.  You will need this information for the steps below.
