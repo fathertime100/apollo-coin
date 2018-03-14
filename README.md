@@ -119,14 +119,23 @@ Ensure that your Masternode 'status' is either 8 or 9.
 Here is the list of possible Masternode statuses:
 
 1 = Your masternode has not been processed by the network yet.  Please wait.
+
 2 = Your masternode is active.
+
 3 = Your masternode is inactive.
+
 4 = Your masternode has stopped.
+
 5 = Your masternode seed transaction hasn't reached the minimum of 16 confirmations.  
+
 6 = Your masternode port is closed.
+
 7 = Your masternode port is open.
+
 8 = Your masternode is syncing to the network.
+
 9 = Your masternode is remotely enabled and active.
+
 
 There are two very confusing fields here, the first is 'pubKeyMasternode'.  Given the name of this field, one would expect that this field would be the one that is listed on the masternode public list here: [https://xap.overemo.com/masternodes](https://xap.overemo.com/masternodes).  It is not!  To look up your masternode on this list, use the public key you created in step C3.  
 
