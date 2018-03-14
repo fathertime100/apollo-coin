@@ -1,9 +1,10 @@
-# Apollon Coin Step-by-Step Install Instructions
+# Apollo Coin Step-by-Step Install Instructions
 This step-by-step guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on this.  This guide will help you quickly and easily install an [Apollon Masternode](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04 and it will help you set up your wallet with the coins to support the masternode.  Use this guide at your own risk.
 ***
-
+**DISCLAIMER:** The references contained herein are an opinion and is for information purposes only.  It is not intended to be investment advice.  Seek a duly licensed professional for investment advice.
+***
 ## SETUP
-1.  Create a blank text file or notepad on your computer that you can use throughout this tutorial.  We will copy several values to it and then you will save it later for reference in the event that you need to perform any masternode maintenance.  
+Create a blank text file or notepad on your computer that you can use throughout this tutorial.  We will copy several values to it and then you will save it later for reference in the event that you need to perform any masternode maintenance.  
 
 ## A.  Masternode Installation
 1. Setup a Linux Ubuntu 16.04 virtual private server (VPS) from [Vultr](https://www.vultr.com/?ref=7348757).  This server costs $5 USD / month.  If you need help setting up a VPS with Vultr, please watch this [video on how to set up a Vultr VPS with Ubuntu 16.04](https://www.youtube.com/).
