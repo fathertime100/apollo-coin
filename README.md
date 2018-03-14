@@ -11,7 +11,7 @@ Create a blank text file or notepad on your computer that you can use throughout
 2. SSH into your server using Terminal on a Mac or [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows.  If this is your first time doing this, please watch the video in step 1.
 3.  Copy and paste the below code snippet into your SSH session and hit enter.  This will download the masternode installation script onto your VPS.  
 ```
-wget -q https://raw.githubusercontent.com/fathertime100/apollo-coin/master/apollon_install.sh
+wget -q https://raw.githubusercontent.com/fathertime100/apollon/master/apollon_install.sh
 ```
 4.  Install your server.  Copy and paste this code into your SSH session and press enter. Note that this process will take between 30 and 45 minutes to complete.  
 ```
