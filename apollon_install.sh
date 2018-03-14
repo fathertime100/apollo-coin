@@ -269,16 +269,16 @@ function create_swap() {
 
 function important_information() {
  echo
- echo -e "================================================================================================================================"
+ echo -e "==========================================================================================================="
  echo -e "$COIN_NAME CONGRATULATIONS ${RED}$COIN_PORT${NC}."
  echo -e "Your ${GREEN}$COIN_NAME${NC} Masternode is up and running listening on port ${RED}$COIN_PORT${NC}."
- echo -e "Configuration file is located at: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
- echo -e "The server start command is: ${RED}systemctl start $COIN_NAME.service${NC}"
- echo -e "The server stop command is: ${RED}systemctl stop $COIN_NAME.service${NC}"
- echo -e "Your server ID Address and Port are: ${RED}$NODEIP:$COIN_PORT${NC}"
+ echo -e "The server configuration file is located at: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
+ echo -e "To start the server, run this command: ${RED}systemctl start $COIN_NAME.service${NC}"
+ echo -e "To stop the server, run this command: ${RED}systemctl stop $COIN_NAME.service${NC}"
+ echo -e "Your server IP Address and Port are: ${RED}$NODEIP:$COIN_PORT${NC}"
  echo -e "YOUR MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
- echo -e "Please check that ${GREEN}$COIN_NAME${NC} is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
- echo -e "================================================================================================================================"
+ echo -e "To check the status of your ${GREEN}$COIN_NAME${NC} masternode, run this command: ${RED}systemctl status $COIN_NAME.service${NC}"
+ echo -e "==========================================================================================================="
 }
 
 function setup_node() {
