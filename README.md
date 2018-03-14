@@ -1,4 +1,4 @@
-# Apollo Coin Step-by-Step Install Instructions
+# Apollon Coin (XAP) Step-by-Step Install Instructions
 This guide will help you quickly and easily install an [Apollon Masternode](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04 and it will help you set up your wallet with the coins to support the masternode.  Use this guide at your own risk.
 ***
 **Acknowledgements**
@@ -13,20 +13,45 @@ This process will does take some time to complete from start to finish.  If you 
 
 It involves six steps:
 
-A.  Masternode Installation - 40 minutes
+1.  Purchase XAP Coins - 40 to 120 minutes
 
-B.  Wallet Installation - 15 minutes
+2.  Masternode Installation - 40 minutes
 
-C.  Purchase and Stake Coins - 40 to 120 minutes
+3.  Wallet Installation - 20 minutes
 
-D.  Start Masternode - 15 minutes
+4.  Stake Coins and Start Masternode - 30 minutes
 
-E.  Network Verification - 40 to 90 minutes
+5.  Network Verification - 40 to 90 minutes
 
-F.  Maintenance
+6.  Maintenance
 
 
-## A.  Masternode Installation
+## 1.  Purchase XAP Coins
+We will start by purchasing 25,100 Apollo Coins to pay for our stake in the masternode (25,000 XAP) and to pay for the transaction fees associated to buying and transferring the coins around (~100 XAP).
+
+1.  **Account Setup.**  Set up an account on either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC). 
+2.  **Calculate how much BTC you need to transfer.**  Look up the current price of [BTC to XAP](https://graviex.net/markets/xapbtc) and calculate how much BTC you'll need to transfer to the exchange in order to purchase **25,100 XAP**.  
+
+For example: As of March 14th, 2018 1 XAP = ~0.00003 BTC.  25,100 x 0.00003 = 0.753 BTC.  As the price of BTC and XAP can fluctuate quite a lot between the time that you begin your transfer of BTC to the time that you receive it to purchase your XAP on one of the exchanges, I recommend that you increase the amount of BTC that you transfer to the exchange by 5%.  For example, 0.753 x 1.05 = 0.7905 BTC.  This **should** ensure that you have enough BTC to pay for your XAP once it arrives at the exchange.  
+
+Here is the complete calculation.
+```
+    25,100
+x  0.00003     <== replace this value with the current trading price of XAPBTC on the exchange
+x     1.05
+----------
+    0.7905 BTC
+```
+
+3.  **Transfer the BTC to the Eexchange.**  Deposit the calculated amount of BTC from step 2 to the exchange from one of your other BTC wallets.  Note that currently, BTC transfers take about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the transaction as neither exchange displays incoming transactions or their confirmations.
+
+4.  **Buy your XAP.**  Initiate a buy order and wait for the order to be filled.  Depending on the market volume, this can take between 5 to 60 minutes.
+
+Do not transfer your XAP anywhere yet, move onto step 2.
+***
+
+
+## 2.  Masternode Installation
 **BEFORE YOU START** Create a blank text file or notepad on your computer that you can use throughout this tutorial.  You can download a text file that I have created from [here](https://drive.google.com/open?id=1zr5txLveadmKaUDBw4p20Pn-VD8CmbFb) as a starting point.  Please download this and save it somewhere safe.  You will copy and paste several values to it throughout this process and you will need it for reference to perform masternode maintenance in the future.  
 
 1. Setup a Linux Ubuntu 16.04 virtual private server (VPS) from [Vultr](https://www.vultr.com/?ref=7348757).  This server 
@@ -53,7 +78,7 @@ MASTERNODE SERVICE DETAILS
 
 Your Apollon Masternode is up and running listening on port 12116.
 The server configuration file is located at: /root/.Apollon/Apollon.conf
-Your server IP Address and Port are: 45.32.224.15:12116
+Your server IP Address and Port are (VPS_IP:PORT): 45.32.224.15:12116
 YOUR MASTERNODE PRIVATEKEY is: adfwivhw0ru340230fMZdasdfasdweav3459834u5B1kxHV2398aav93
 
 =============================================================================================
@@ -145,18 +170,26 @@ You will see a result that is similiar to this:
 The **"status"** of your masternode will be one of the following:
 
 1 = Your masternode has not been processed by the network yet.  Please wait.
+
 2 = Your masternode is active and synced to the network.
+
 3 = Your masternode is inactive.
+
 4 = Your masternode has stopped.
+
 5 = Your masternode seed transaction hasn't reached the minimum of 16 confirmations.  
+
 6 = Your masternode port is closed.
+
 7 = Your masternode port is open.
+
 8 = Your masternode is syncing to the network.
+
 9 = Your masternode is remotely enabled and active.
 
 Your masternode should currently have a status of either 8 or 2.  
 
-If it is an 8, if you run this command again:
+If it is an 8, and if you run this command again:
 ```
 Apollond getinfo
 ```
@@ -170,7 +203,7 @@ Your **"blocks"** field have increased from the last time you checked it.
     "darksend_balance" : 0.00000000,
     "newmint" : 0.00000000,
     "stake" : 0.00000000,
-    "blocks" : 8293,
+    "blocks" : 19203,
     "timeoffset" : 0,
     "moneysupply" : 20686950.00000000,
     "connections" : 12,
@@ -192,47 +225,14 @@ Keep running the **Apollond masternode status** command until you achieve a **"s
 
 ***
 
-## B. Purchase 25,000 Apollo Coins (+100 coins for exchange and transfer fees)
-1.  Set up an account on either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC).  NOTE: both of these exchanges have very poor interfaces with virtually no feedback mechanisms or alerts, so just be patient after every click and wait for something to change on the screen, trudge through the mud, you'll eventually get your coins.  
-2.  Look up the current price of [BTC to XAP](https://graviex.net/markets/xapbtc) and calculate how much BTC you'll need to transfer to the exchange in order to purchase **25,100 XAP**.  
-3.  Deposit BTC to the exchange from one of your BTC wallets.  Note that currently, BTC transfers take about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the transaction as neither exchange displays incoming transactions or their confirmations.
-4.  Initiate a buy order and wait for the order to be filled.  Depending on the market volume, this can take between 1 to 30 minutes.
+## 2. Wallet Installation
 
-Once you have your coins, WAIT, do not transfer them anywhere yet,.
+After the masternode is up and running, you need to configure a windows desktop wallet accordingly.
 
-***
-
-## C. Desktop wallet setup
-
-After the MN is up and running, you need to configure a windows desktop wallet accordingly. Here are the steps:  
-
-**WINDOWS USERS**
+**WINDOWS USERS** (Mac users see below)
 1. Download the wallet from here: [Apollon Windows Wallet](https://github.com/apollondeveloper/ApollonCoin/releases/download/1.0.3/Apollon-qt.exe)
 2. Open the Apollon Desktop Wallet.  
-3. Go to RECEIVE and create a New Address with the label: **MN1**  
-4. Copy and paste the public address to your working file.  Note: this is also the public address of your masternode that you will use to look up your masternode on [https://xap.overemo.com/masternodes](https://xap.overemo.com/masternodes).  It will not be published yet.  
-5. Go to the exchange you purchased your coins on and set up a withdrawal of **25,000** coins EXACTLY to the public address you just copied from your Desktop Wallet.  **THIS IS VERY IMPORTANT, DO NOT SEND 25,100 COINS, ONLY SEND 25000 XAP TO MN1.  ALSO, YOU MUST DO THIS IN A SINGLE TRANSACTION.  YOU CAN NOT MAKE TWO 12,500 TRANSACTIONS TO THIS ADDRESS, THE SERVER WILL NOT REGISTER THIS AS A WALLET STAKE.  A SINGLE RECEIVING ADDRESS MUST ONLY HAVE ONE TRANSACTION OF 25,000 XAP SENT TO IT.  NEVER SEND ANY OTHER XAP TO THIS PUBLIC ADDRESS.  IF YOU WANT TO SEND ANY MORE XAP TO YOUR WALLET, CREATE A NEW ADDRESS.**
-6. Wait for 16 confirmations.  To check the status of your transfer, go to your Desktop Wallet and go to **Transactions**.  Once you have initiated the transfer from the exchange, it will take a few minutes to show up in your wallet.  Once it has, you can double click on it and a 'Transaction details' pop-up will appear.  Under here, you will see **Status:** and it will tell you the number of confirmations that your transaction has achieved.  This pop-up does not update automatically, so close and reopen this pop-up until the number of confirmations is 16 or higher.   
-7. Go to **Help -> "Debug Window - Console"**  
-8. Enter the following command: **masternode outputs**     The result will look something like this:
-```
-{
-    "b35aaf4fba02ea64c239ofasdoe8f55abc66cb26a8930656ad8020334bf871" : "1"
-}
-```
-9. Copy and paste this information into your working file.
-9. Go to **Masternodes** tab  
-10. Click **Create** and fill these details:  
-* Alias: **MN1**  
-* Address: **VPS_IP:PORT**  from step A1 above.  Use port **12116**
-* Privkey: **Masternode Private Key** from step A5 above, DO NOT USE THE PRIVATE KEY IN THIS DOCUMENT, USE THE ONE YOU CREATED.
-* TxHash: **First value from Step 6**  
-* Output index:  **Second value from Step 6, either a 1 or a 0**  
-* Reward address: leave blank  
-* Reward %: leave blank  
-11. Click **OK** to add the masternode  
-12. Click **Start All**  
-***
+
 
 **MAC USERS**
 ###(DO NOT USE THE MAC WALLET, IT DOES NOT WORK AS OF 12-MAR-2018)
@@ -248,6 +248,39 @@ In order to keep your Masternode and your wallet seperate (recommended), you'll 
 8.  Go up to the **WINDOWS USERS** instructions above and start from step 1.  
 
 ***
+
+3.  
+
+Go to RECEIVE and create a New Address with the label: **MN1**  
+4. Copy and paste the public address to your working file.  Note: this is also the public address of your masternode that you will use to look up your masternode on [https://xap.overemo.com/masternodes](https://xap.overemo.com/masternodes).  It will not be published yet.  
+5. Go to the exchange you purchased your coins on and set up a withdrawal of **25,000** coins EXACTLY to the public address you just copied from your Desktop Wallet.  **THIS IS VERY IMPORTANT, DO NOT SEND 25,100 COINS, ONLY SEND 25000 XAP TO MN1.  ALSO, YOU MUST DO THIS IN A SINGLE TRANSACTION.  YOU CAN NOT MAKE TWO 12,500 TRANSACTIONS TO THIS ADDRESS, THE SERVER WILL NOT REGISTER THIS AS A WALLET STAKE.  A SINGLE RECEIVING ADDRESS MUST ONLY HAVE ONE TRANSACTION OF 25,000 XAP SENT TO IT.  NEVER SEND ANY OTHER XAP TO THIS PUBLIC ADDRESS.  IF YOU WANT TO SEND ANY MORE XAP TO YOUR WALLET, CREATE A NEW ADDRESS.**
+6. Wait for 16 confirmations.  To check the status of your transfer, go to your Desktop Wallet and go to **Transactions**.  Once you have initiated the transfer from the exchange, it will take a few minutes to show up in your wallet.  Once it has, you can double click on it and a 'Transaction details' pop-up will appear.  Under here, you will see **Status:** and it will tell you the number of confirmations that your transaction has achieved.  This pop-up does not update automatically, so close and reopen this pop-up until the number of confirmations is 16 or higher.   
+7. Go to **Help -> "Debug Window - Console"**  
+8. Enter the following command: **masternode outputs**     The result will look something like this:
+```
+{
+    "b35aaf4fba02ea64c239ofasdoe8f55abc66cb26a8930656ad8020334bf871" : "1"
+}
+
+```
+This value is your **TxHash** value that you will need in step 
+
+9. Copy and paste this information into your working file.
+10. Go to **Masternodes** tab  
+11. Click **Create** and fill these details:  
+* Alias: **MN1**  
+* Address: **VPS_IP:PORT**  from MASTERNODE SERVICE DETAILS produced while building your Linux masternode service.
+* Privkey: **Masternode Private Key**  from MASTERNODE SERVICE DETAILS produced while building your Linux masternode service.  NOTE: DO NOT USE THE PRIVATE KEY IN THIS DOCUMENT, USE THE ONE YOU CREATED ABOVE.
+* TxHash: **First value from Step 8**   NOTE: DO NOT USE THE PRIATE KEY IN THIS DOCUMENT, USE THE ONE YOU CREATED ABOVE. 
+* Output index:  **Second value from Step 6, either a 1 or a 0**  
+* Reward address: leave blank  
+* Reward %: leave blank  
+12. Click **OK** to add the masternode  
+13. Click **Start All**  
+***
+
+
+
 
 ## D. COMPLETION CHECK & MAINTENANCE
 You've done it, you've just set up a masternode for Apollo.  Now we need to check to ensure that it is operating properly and communicating with the other servers on in the network.  In the future you can also use these commands to check your server status and ensure that things are running as they should be.  
