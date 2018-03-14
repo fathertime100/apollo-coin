@@ -90,7 +90,7 @@ EOF
 }
 
 function create_key() {
-  echo -e "Press enter to generate a new ${RED}Masternode Private Key${NC} for you:"
+  echo -e "Press enter to generate your ${RED}Masternode Private Key${NC}:"
   read -e COINKEY
   if [[ -z "$COINKEY" ]]; then
   $COIN_DAEMON -daemon
@@ -250,7 +250,7 @@ clear
 }
 
 function create_swap() {
- echo -e "Checking if a memory swap file is required."
+ echo -e "Checking to see if a memory swap file is required."
  PHYMEM=$(free -g|awk '/^Mem:/{print $2}')
  SWAP=$(free -g|awk '/^Swap:/{print $2}')
  if [ "$PHYMEM" -lt "2" ] && [ -n "$SWAP" ]
@@ -272,8 +272,8 @@ function create_swap() {
 function important_information() {
  echo
  echo -e "==========================================================================================================="
- echo -e "${GREEN}CONGRATULATIONS!!!"
- echo -e "Your ${GREEN}$COIN_NAME${NC} masternode is up and running listening on port ${RED}$COIN_PORT${NC}."
+ echo -e "${GREEN}CONGRATULATIONS!!!${NC}"
+ echo -e "Your ${GREEN}$COIN_NAME${NC} masternode is up and running listening on port ${RED}$COIN_PORT${NC}"
  echo -e "The server configuration file is located at: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
  echo -e "To start the server, run this command: ${RED}systemctl start $COIN_NAME.service${NC}"
  echo -e "To stop the server, run this command: ${RED}systemctl stop $COIN_NAME.service${NC}"
@@ -281,6 +281,9 @@ function important_information() {
  echo -e "YOUR MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
  echo -e "To check the status of your ${GREEN}$COIN_NAME${NC} masternode, run this command: ${RED}systemctl status $COIN_NAME.service${NC}"
  echo -e "==========================================================================================================="
+ echo -e ""
+ echo -e "Please copy and paste the above data into a file and store in a secure location."
+ echo -e "You will need this information to complete your masternode installation."
 }
 
 function setup_node() {
