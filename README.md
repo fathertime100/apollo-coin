@@ -1,7 +1,10 @@
 # Apollo Coin Step-by-Step Install Instructions
-This step-by-step guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on this.  This guide will help you quickly and easily install an [Apollon Masternode](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04 and it will help you set up your wallet with the coins to support the masternode.  Use this guide at your own risk.
+This guide will help you quickly and easily install an [Apollon Masternode](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04 and it will help you set up your wallet with the coins to support the masternode.  Use this guide at your own risk.
 ***
-**DISCLAIMER:** The references contained herein are an opinion and is for information purposes only.  It is not intended to be investment advice.  Seek a duly licensed professional for investment advice.
+**Acknowledgements**
+This guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on this.  Also thank-you to the entire Apollon team on Discord who helped get through the weeds on setting this up.  Specifically, iTzShowTime, Visco, zoldur, XAP_MAX and MorpheusM, thanks team!
+***
+**DISCLAIMER:** The references contained herein are for information purposes only.  This guide is not intended to be investment advice.  Seek a duly licensed professional for investment advice before investing in any masternode.
 ***
 This guide assumes some basic knowledge of Linux and Cryptocurrency Exchanges.  You do not need to be an expert to complete this tutorial.  If you have any questions, please feel free to reach out to me directly on Discord, my username is fathertime100.  
 ***
@@ -24,11 +27,11 @@ F.  Maintenance
 1. Setup a Linux Ubuntu 16.04 virtual private server (VPS) from [Vultr](https://www.vultr.com/?ref=7348757).  This server 
 costs $5 USD / month.  If you need help setting up a VPS with Vultr, please watch this [video on how to set up a Vultr VPS with Ubuntu 16.04](https://youtu.be/jsP3K0D6ONE).
 2. SSH into your server using Terminal on a Mac or [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows.  If this is your first time doing this, please watch the video in step 1.
-3.  Copy and paste the below code snippet into your SSH session and hit enter.  This will download the masternode installation script onto your VPS.  
+3.  Copy and paste the below command into your SSH session and hit enter.  This will download the masternode installation script onto your VPS.  
 ```
 wget -q https://raw.githubusercontent.com/fathertime100/apollon/master/apollon_install.sh
 ```
-4.  Install your server.  Copy and paste this code into your SSH session and press enter. Note that this process will take between about 30 minutes to complete.  
+4.  Install your server. Copy and paste the below command into your SSH session and press enter. Note that this process will take between about 30 minutes to complete.  
 ```
 bash apollon_install.sh
 ```
