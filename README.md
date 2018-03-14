@@ -13,12 +13,17 @@ This process will does take some time to complete from start to finish.  If you 
 
 It involves six steps:
 
-A.  Masternode Installation - 40 minutes\n
-B.  Wallet Installation - 15 minutes\n
-C.  Purchase and Stake Coins - 40 to 120 minutes\n
-D.  Start Masternode - 15 minutes\n
-E.  Network Verification - 40 to 90 minutes\n
-F.  Maintenance\n
+A.  Masternode Installation - 40 minutes
+
+B.  Wallet Installation - 15 minutes
+
+C.  Purchase and Stake Coins - 40 to 120 minutes
+
+D.  Start Masternode - 15 minutes
+
+E.  Network Verification - 40 to 90 minutes
+
+F.  Maintenance
 
 
 ## A.  Masternode Installation
