@@ -19,10 +19,10 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 function compile_node() {
-  echo -e "Preparing to compile $COIN_NAME."
+  echo -e "Preparing to compile ${GREEN}$COIN_NAME${NC}."
   git clone  $COIN_REPO $TMP_FOLDER
   cd $TMP_FOLDER/src
-  make -f makefile.unix | pv -l EXPECTED_LINES
+  make -f makefile.unix | pv
   compile_error
   strip Apollond
   cp Apollond /usr/local/bin
@@ -219,19 +219,20 @@ echo -e "Several background tasks are currently running."
 echo -e "This entire process will take 15 to 20 minutes to complete."
 echo -e "Leave this terminal session open until you are prompted to generate your private key."
 echo -e "The next prompt will occur in 3-4 minutes.  Please wait."
+DEBIAN_FRONTEND=noninteractive apt-get install pv > /dev/null 2>&1
 apt-get update >/dev/null 2>&1 | pv
-DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
+DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1 | pv
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
 apt install -y software-properties-common >/dev/null 2>&1 | pv
 echo -e "${GREEN}Adding the Bitcoin PPA repository"
 apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1 | pv
 echo -e "Continuing to install the required software packages.${NC}"
 echo -e "In a few moments you will begin to see a number of responses, please allow these to complete.${NC}"
-apt-get update >/dev/null 2>&1
+apt-get update >/dev/null 2>&1 | pv
 apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" make software-properties-common \
 build-essential libtool autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev \
 libboost-system-dev libboost-test-dev libboost-thread-dev sudo automake git wget pwgen curl libdb4.8-dev bsdmainutils libdb4.8++-dev \
-libminiupnpc-dev libgmp3-dev ufw pkg-config libevent-dev  libdb5.3++ unzip >/dev/null 2>&1
+libminiupnpc-dev libgmp3-dev ufw pkg-config libevent-dev  libdb5.3++ unzip >/dev/null 2>&1 | pv
 if [ "$?" -gt "0" ];
   then
     echo -e "${RED}Not all required packages were installed properly. Try to install them manually by running the following commands:${NC}\n"
@@ -249,19 +250,20 @@ clear
 }
 
 function create_swap() {
- echo -e "Checking if swap space is needed."
+ echo -e "Checking if a memory swap file is required."
  PHYMEM=$(free -g|awk '/^Mem:/{print $2}')
  SWAP=$(free -g|awk '/^Swap:/{print $2}')
  if [ "$PHYMEM" -lt "2" ] && [ -n "$SWAP" ]
   then
-    echo -e "${GREEN}Creating 2GB swap file.${NC}"
+    echo -e "${GREEN}Your server has less than 2GB of ram, a swap file is required. Creating 2GB swap file.${NC}"
     SWAPFILE=$(mktemp)
     dd if=/dev/zero of=$SWAPFILE bs=1024 count=2M
     chmod 600 $SWAPFILE
     mkswap $SWAPFILE
     swapon -a $SWAPFILE
+    echo -e "${GREEN}Swap file created successfully.${NC}"
  else
-  echo -e "${GREEN}Your server has 2GB of ram, continuing installation.${NC}"
+  echo -e "${GREEN}Your server has 2GB of ram, a swap file is not required. Continuing installation.${NC}"
  fi
  clear
 }
@@ -270,8 +272,8 @@ function create_swap() {
 function important_information() {
  echo
  echo -e "==========================================================================================================="
- echo -e "$COIN_NAME CONGRATULATIONS ${RED}$COIN_PORT${NC}."
- echo -e "Your ${GREEN}$COIN_NAME${NC} Masternode is up and running listening on port ${RED}$COIN_PORT${NC}."
+ echo -e "${GREEN}CONGRATULATIONS!!!"
+ echo -e "Your ${GREEN}$COIN_NAME${NC} masternode is up and running listening on port ${RED}$COIN_PORT${NC}."
  echo -e "The server configuration file is located at: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
  echo -e "To start the server, run this command: ${RED}systemctl start $COIN_NAME.service${NC}"
  echo -e "To stop the server, run this command: ${RED}systemctl stop $COIN_NAME.service${NC}"
@@ -295,9 +297,6 @@ function setup_node() {
 ##### Main #####
 
 
-apt-get install pv
-
-clear
 clear
 
 checks
