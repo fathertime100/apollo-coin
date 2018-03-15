@@ -4,7 +4,7 @@ This guide will help you quickly and easily install an [Apollon Masternode](http
 This guide assumes some basic knowledge of Linux and Cryptocurrency Exchanges.  You do not need to be an expert to complete this tutorial.  If you have any questions, please feel free to reach out to me directly on [Discord](https://discordapp.com/download) and I'd be happy to help!  My username is fathertime100.   
 ***
 ## OVERVIEW
-This process will does take some time to complete from start to finish.  If you are adept at masternode setup it will take you less time, if you are a first-timer, expect to put in a few hours to complete this process.
+This process will take some time to complete.  If you are adept at masternode setup it will take you around two hours.  If you are a first-timer, expect to put in a few hours to complete this process.
 
 It involves six steps:
 
@@ -28,7 +28,7 @@ You need a **Apollon Masternode Reference Document** to save all your masternode
 ***
 
 ## 1.  Purchase XAP Coins
-We will start by purchasing 25,100 Apollo Coins to pay for our stake in the masternode (25,000 XAP) and to pay for the transaction fees associated to buying and transferring the coins around (~100 XAP).
+We will start by purchasing 25,100 Apollo Coins to pay for our stake in the masternode (25,000 XAP) and to pay for the transaction fees associated to buying and transferring the coins around (100 XAP).
 
 a.  **Setup an exchange account.**  Set up an exchange account on either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC). These are the only two exchanges where Apollon (XAP) is currently traded.
 
@@ -45,19 +45,19 @@ x     1.05
     0.7905 BTC
 ```
 
-c.  **Transfer the BTC to the exchange.**  Withdraw the BTC amount you calculated in step 2 from one of your BTC wallets and Deposit it to the exchange.  Note that currently, BTC withdrawal/deposits take about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the withdrawal transaction as neither exchange displays incoming deposits or their confirmations.
+c.  **Transfer the BTC to the exchange.**  Withdraw the BTC amount you calculated in step 2 from one of your BTC wallets and Deposit it to the exchange.  Note that currently, BTC withdrawal/deposits take about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the withdrawal transaction as neither exchange displays incoming deposits or their confirmations.
 
 d.  **Buy your XAP.**  Initiate a buy order and wait for the order to be filled.  Depending on the market volume, this can take between 5 to 60 minutes.
 
-Do not transfer your XAP anywhere yet, move onto step 2.
+Move onto step 2.
 ***
 
 
 ## 2.  Masternode Installation
 
-a. **Setup Linux VPS.** Setup a Linux Ubuntu 16.04 virtual private server (VPS) from [Vultr](https://www.vultr.com/?ref=7348757).  This server costs $5 USD / month.  If you need help setting up a VPS with Vultr, please watch this [video on how to set up a Vultr VPS with Ubuntu 16.04](https://youtu.be/jsP3K0D6ONE).  
+a. **Setup a Linux VPS.** Setup a Linux Ubuntu 16.04 virtual private server (VPS) from [Vultr](https://www.vultr.com/?ref=7348757).  This server costs $5 USD / month.  If you need help setting up a VPS with Vultr, please watch this [video on how to set up a Vultr VPS with Ubuntu 16.04](https://youtu.be/jsP3K0D6ONE).  
 
-When you create your VPS you will provide it a hostname / alias.  Copy and paste the hostname / alias into your **Apollon Masternode Reference File** under the header MASTERNODE ALIAS
+When you create your VPS you will provide it a hostname / alias.  Copy and paste the hostname / alias into your **Apollon Masternode Reference Document** under the header MASTERNODE ALIAS
 
 b. **Start an SSH Session.** SSH into your server using Terminal on a Mac or [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows.  If this is your first time doing this, please watch the video in step 2.a.
 
@@ -71,7 +71,7 @@ d. **Run the installation script.** Copy and paste the below command into your S
 bash apollon_install.sh
 ```
 
-e.  **Obtain your Masternote Private Key**.  After the script installs a number of programs, it will ask you to **"Press enter to generate your Masternode Private Key."**.  Press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look like this:
+e.  **Obtain your Masternote Private Key**.  After the script installs a number of programs and compiles the Apollond daemon, it will ask you to **"Press enter to generate your Masternode Private Key."**.  Press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look like this:
 
 ```
 Installing and setting up firewall to allow ingress on port 12116
