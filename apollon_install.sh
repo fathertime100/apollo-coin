@@ -273,15 +273,14 @@ function create_swap() {
 function important_information() {
  echo
  echo -e "==========================================================================================================="
- echo -e "                                  ${GREEN}CONGRATULATIONS!!!${NC}"
+ echo -e "    ${GREEN}CONGRATULATIONS!!!${NC} Your ${GREEN}$COIN_NAME${NC} masternode is up and running listening on port ${RED}$COIN_PORT${NC}" 
  echo -e "==========================================================================================================="
  echo -e " "
  echo -e "MASTERNODE SERVICE DETAILS"
  echo -e " "
- echo -e "Your ${GREEN}$COIN_NAME${NC} masternode is up and running listening on port ${RED}$COIN_PORT${NC}"
  echo -e "The server configuration file is located at: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
  echo -e "Your server IP Address and Port are: ${RED}$NODEIP:$COIN_PORT${NC}"
- echo -e "YOUR MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
+ echo -e "Your MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
  echo -e " "
  echo -e "==========================================================================================================="
  echo -e " "
@@ -300,7 +299,7 @@ function important_information() {
  echo -e " "
  echo -e "==========================================================================================================="
  echo -e " "
- echo -e "Please copy and paste the above data into a file and store in a secure location."
+ echo -e "Please copy and paste the above data into your ${GREEN}$COIN_NAME${NC} Masternode Reference Document."
  echo -e "You will need this information to complete your installation and to maintain your masternode."
 }
 
