@@ -10,7 +10,7 @@ It involves six steps:
 
 1.  Purchase XAP Coins - 40 to 120 minutes
 
-2.  Masternode Installation - 40 minutes
+2.  Masternode Installation - 20 minutes
 
 3.  Wallet Installation - 20 minutes
 
@@ -66,7 +66,7 @@ c. **Get the installation script.** Copy and paste the below command into your S
 wget -q https://raw.githubusercontent.com/fathertime100/apollon/master/apollon_install.sh
 ```
 
-d. **Run the installation script.** Copy and paste the below command into your SSH session and press enter. Note that this process will take between about 30 minutes to complete.  Go and get a coffee.
+d. **Run the installation script.** Copy and paste the below command into your SSH session and press enter. Note that this process will take between about 20 minutes to complete.  Go and get a coffee.
 ```
 bash apollon_install.sh
 ```
