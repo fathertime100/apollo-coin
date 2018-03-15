@@ -273,7 +273,7 @@ function create_swap() {
 function important_information() {
  echo
  echo -e "==========================================================================================================="
- echo -e "    ${GREEN}CONGRATULATIONS!!!${NC} Your ${GREEN}$COIN_NAME${NC} masternode is up and running listening on port ${RED}$COIN_PORT${NC}" 
+ echo -e "    ${GREEN}CONGRATULATIONS!!!${NC} Your ${GREEN}$COIN_NAME${NC} masternode is up and running listening on port ${GREEN}$COIN_PORT${NC}" 
  echo -e "==========================================================================================================="
  echo -e " "
  echo -e "MASTERNODE SERVICE DETAILS"
@@ -284,24 +284,8 @@ function important_information() {
  echo -e " "
  echo -e "==========================================================================================================="
  echo -e " "
- echo -e "STARTING AND STOPPING THE MASTERNODE SERVICE"
- echo -e " "
- echo -e "To start the server, run this command: ${RED}systemctl start $COIN_NAME.service${NC}"
- echo -e "To stop the server, run this command: ${RED}systemctl stop $COIN_NAME.service${NC}"
- echo -e " "
- echo -e "==========================================================================================================="
- echo -e " "
- echo -e "CHECKING THE STATUS OF YOUR MASTERNODE"
- echo -e " "
- echo -e "To check if your masternode is running, run this command: ${RED}systemctl status $COIN_NAME.service${NC}"
- echo -e "To check the number of blocks synced to your masternode, run this command: ${RED}Apollond getinfo${NC}"
- echo -e "To check the status of your masternode, run this command: ${RED}Apollond masternode status${NC}"
- echo -e " "
- echo -e "==========================================================================================================="
- echo -e " "
  echo -e "Please copy and paste the above data into your ${GREEN}$COIN_NAME${NC} Masternode Reference Document under"
- echo -e "the header MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation"
- echo -e "and to maintain your masternode."
+ echo -e "the header MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation."
 }
 
 function setup_node() {
