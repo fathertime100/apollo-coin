@@ -285,19 +285,33 @@ j.  Go up to the **WINDOWS USERS** instructions above to download and open the w
 ***
 
 
-## 3. Stake Coins and Start Masternode
+## 4. Stake Coins and Start Masternode
 
-a. **Create your MASTERNODE PUBLIC ADDRESS.** Go to RECEIVE and create a New Address with the label: **MN1**   
+a. **Create a address.** Go to RECEIVE and create a New Address with the label: **FROM EXCHANGE** 
 
-b. **Save your MASTERNODE PUBLIC ADDRESS.** Copy and paste the address you just created to your **Apollon Masternode Reference Document** under the header **MASTERNODE PUBLIC ADDRESS**.  
+b. Copy the address and go back to your exchange.
 
-c. Go to the exchange you purchased your coins on and set up a withdrawal of **25,000** coins EXACTLY to your **MASTERNODE PUBLIC ADDRESS** (the address you just created in step 3.b).  **THIS IS VERY IMPORTANT, ONLY SEND 25000 XAP IN A *SINGLE DEPOSIT* TO YOUR MASTERNODE PUBLIC ADDRESS.**  YOU CAN NOT MAKE MULTIPLE DEPOSITS TO YOUR MASTERNODE PUBLIC ADDRESS AND HAVE IT COUNT AS A STAKE.  FOR EXAMPLE, MAKING TWO DEPOSITS, ONE OF 10,000 AND ANOTHER OF 15,000 WILL NOT COUNT AS YOUR MASTERNODE STAKE.  IT HAS TO BE ONE SINGLE DEPOSIT OF 25,000 XAP.  There is a work around if you do make this mistake, it involves making another transaction to yourself after you've made multiple deposits.  Please contact me directly if you make this mistake and I can help you with this solution.  
+c. On the exchange, set up a withdrawal of **25,100** coins to the **FROM EXCHANGE** address you just created in step 3.a), not that you will have more than 25,000 coins arrive at that address even after exchange fees.  Click **Withdraw Now**.
 
-d. **Wait for 16 confirmations.**  To check the status of your transfer, go to your Desktop Wallet and go to **Transactions**.  Once you have initiated the transfer from the exchange, it will take a few minutes to show up in your wallet.  Once it has, you can double click on it and a 'Transaction details' pop-up will appear.  Under here, you will see **Status:** and it will tell you the number of confirmations that your transaction has achieved.  This pop-up does not update automatically, so close and reopen this pop-up until the number of confirmations is 16 or higher.   
+d. Wait for 16 confirmation to settle those coins.
 
-e. Go to **Help -> "Debug Window - Console"**  
+e. Go back to RECEIVE in the wallet and create a new address, which will become your **MASTERNODE PUBLIC ADDRESS**, with the label: **MN1**
 
-f. Enter the following command: **masternode outputs**
+F. **Save your MASTERNODE PUBLIC ADDRESS.** Copy and paste the address you just created to your **Apollon Masternode Reference Document** under the header **MASTERNODE PUBLIC ADDRESS**.  
+
+g. Go back to your wallet and click on SEND.
+
+h. Paste the same address into the Pay To: field and the label MN1 will automatically populate.  In amount, enter 25,000 XAP.  
+
+**IMPORTANT:** YOU CANNOT MAKE MULTIPLE DEPOSITS TO YOUR MASTERNODE PUBLIC ADDRESS AND HAVE IT COUNT AS A STAKE.  FOR EXAMPLE, MAKING TWO DEPOSITS, ONE OF 10,000 AND ANOTHER OF 15,000 WILL NOT COUNT AS YOUR MASTERNODE STAKE.  IT HAS TO BE ONE SINGLE DEPOSIT OF 25,000 XAP.  There is a work around if you do make this mistake, it involves making another transaction to yourself after you've made multiple deposits.  Please contact me directly if you make this mistake and I can help you with this solution.  
+
+i. **Wait for 16 confirmations.**  To check the status of your transfer, click on TRANSACTIONS.  Once the deposit shows up in your list of transactions, you can double click on it and a 'Transaction details' pop-up will appear.  Under here, you will see **Status:** and it will tell you the number of confirmations that your transaction has achieved.  This pop-up does not update automatically, so close and reopen this pop-up until the number of confirmations is 16 or higher.   
+
+j. Wait for 16 confirmation to settle those coins.
+
+k. Go to **Help -> "Debug Window - Console"**  
+
+l. Enter the following command: **masternode outputs**
 
 The result will look something like this:
 ```
@@ -308,11 +322,11 @@ The result will look something like this:
 ```
 This value is your **TxHash** value and your **Output index** value that you will need in step 3.i below.
 
-g. Copy and paste this information into your **Apollon Masternode Reference Document**, under the header MASTERNODE OUTPUT.
+m. Copy and paste this information into your **Apollon Masternode Reference Document**, under the header MASTERNODE OUTPUT.
 
-h. Go to the **Masternodes** tab.
+n. Go to the **Masternodes** tab.
 
-i. Click **Create** and fill these details:  
+o. Click **Create** and fill these details:  
 * Alias: **MN1**  
 * Address: **VPS_IP:PORT from step 2.e above**.  Also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS 
 * Privkey: **Masternode Private Key from step 2.e above**.  Also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS 
@@ -321,11 +335,11 @@ i. Click **Create** and fill these details:
 * Reward address: leave blank  
 * Reward %: leave blank  
 
-j. Click **OK** to add the masternode 
+p. Click **OK** to add the masternode 
 
-k. Click **Start All**  
+q. Click **Start All**  
 
-l. Go back to your SSH session and enter the following command and hit enter. 
+r. Go back to your SSH session and enter the following command and hit enter. 
 ```
 Apollond masternode status
 ```
