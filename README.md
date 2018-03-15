@@ -109,7 +109,7 @@ You will need this information to complete your installation and to maintain you
 
 e. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
 
-f. **Check the server status.** Next we'll check the status of the server.  Copy and paste the below command into your SSH session and hit enter.  
+f. **Check the server status.** Next we'll check the status of the server.  Run the command below.  
 ```
 systemctl status Apollon
 ```
@@ -127,7 +127,7 @@ Mar 14 19:19:03 APOLLON-2 systemd[1]: Started Apollon service.
 ```
 As long as your server says **"Active: active (running)"**, you're good to go.  
 
-g.  **Check the servers network connectivity.** Next, let's check to see that it's syncing blocks with the network.  Copy and paste the below command into your SSH session and hit enter.  
+g.  **Check the servers network connectivity.** Next, we'll verify that the masternode service is syncing blocks with the network.  Run the command below.  
 ```
 Apollond getinfo
 ```
@@ -156,9 +156,9 @@ You will see a result that is similiar to this:
     "errors" : ""
 }
 ```
-Take note of the **"blocks"** field.  It should be around 8 to 10 thousand at this point, if it's higher, don't worry, you were just slow to enter this command after the previous one and your server is syncing with the network, everything is ok.  
+Take note of the **"blocks"** field.  It should be around 8 to 10 thousand at this point, if it's higher, don't worry, you were just slow to enter this command after the previous one and your masternode service is syncing with the network, everything is ok.  
 
-h.  **Check the masternode status.** Now we'll check the masternode status by copying and pasting this command into the ssh session and hitting enter.  
+h.  **Check the masternode status.** Now we'll check the masternode status.  Run the command below.  
 ```
 Apollond masternode status
 ```
@@ -194,11 +194,11 @@ The **"status"** of your masternode will be one of the following:
 
 Your masternode should currently have a status of either 8 or 2.  
 
-If it is an 8, and if you run this command again:
+If it is an 8, then run this command again:
 ```
 Apollond getinfo
 ```
-Your **"blocks"** field have increased from the last time you checked it.
+Your **"blocks"** field should have increased from the previous time you ran this command.
 ```
 {
     "version" : "v1.0.3.0-60028",
@@ -224,12 +224,16 @@ Your **"blocks"** field have increased from the last time you checked it.
 }
 ```
 
-If it is a 2, this means that your masternode is active and synced to the network and needs the 25,000 coin stake in order to become a participant masternode on the Apollon network.   
+Allow your masternode service some time to continue to sync with the other masternodes on the network.  To determine when it's complete, keep running this command over and over again until you notice that the **"blocks"** field is not incrementing rapidly any longer.  
+
+If your **"status"** from running the **Apollond masternode status** command was a 2, this means that your masternode is active and synced to the network and now needs the 25,000 coin stake in order to become a participant masternode on the Apollon network.   
 
 Keep running the **Apollond masternode status** command until you achieve a **"status"** of 2.  Once your status is 2, move onto step 3 of the tutorial.  
 
-### Issues:
-Some times when Apollon starts for the first time, it will not update the blockchain, meaning you won't see your blocks increasing after running the Apollon getinfo command.  If this is happening to you, try these commands to fix it:
+Note: as of the date of that this document was written, it shouldn't take the masternode service more than 10 or 15 minutes to sync with the rest of the masternodes on the network.
+
+### Potential Issues:
+Some times when Apollon starts for the first time, it will not update the blockchain, meaning you won't see your blocks increasing after running the Apollon getinfo command.  If this is happening to you, try running these commands in order to fix it:
 ```
 Apollond getinfo
 systemctl stop Apollon
@@ -243,9 +247,10 @@ Apollond getinfo
 
 ## 3. Wallet Installation
 
-After the masternode is up and running, you need to configure a windows desktop wallet accordingly.
+After the masternode is up and running, you need to configure a desktop wallet to hold your masternode stake and to recieve your payouts.
 
 **WINDOWS USERS** (Mac users see below)
+
 a. Download the wallet from here: [Apollon Windows Wallet](https://github.com/apollondeveloper/ApollonCoin/releases/download/1.0.3/Apollon-qt.exe)
 
 b. Open the Apollon Desktop Wallet.  
@@ -253,43 +258,42 @@ b. Open the Apollon Desktop Wallet.
 
 **MAC USERS**
 
-### DO NOT USE THE MAC WALLET, IT DOES NOT WORK AS OF 14-03-2018
+**DO NOT USE THE MAC WALLET, IT DOES NOT WORK AS OF 14-03-2018**
 
 In order to keep your Masternode and your wallet seperate, you'll need to take on a little more cost, but you'll be able to use this for other masternode wallets that don't work on Mac yet as well. 
 
-c.  Setup a windows VPS on [Virmach](https://virmach.com/windows-remote-desktop-vps/)
+a.  Setup a windows VPS on [Virmach](https://virmach.com/windows-remote-desktop-vps/)
 
-d.  Choose SSD2G for 10$ per month
+b.  Choose SSD2G for 10$ per month
 
-e.  At checkout, use this coupon and it will only cost $5 USD per month: LEBBF2016G2     
+c.  At checkout, use this coupon and it will only cost $5 USD per month: LEBBF2016G2     
 
-f.  You can choose Windows 2012 or 2016 as the operating system.
+d.  You can choose Windows 2012 or 2016 as the operating system.
 
-g.  You will soon receive an email from Virmach once your server is live.  
+e.  You will soon receive an email from Virmach once your server is live.  
 
-h.  Now click the VNC (Desktop) link in your administration interface.  Go through the windows server setup process and set your administrator password.  Once the password is set, you can use Microsoft Remote Desktop to access the server.  
+f.  After you've received your email, go into the Virmach admin page for your server and click the **VNC (Desktop)** link in your administration interface.  Go through the windows server setup process and set your administrator password.  Once the password is set, you can use Microsoft Remote Desktop to access the server.  
 
-i.  Download [Microsoft Remote Desktop 8.0 for Mac](https://itunes.apple.com/us/app/microsoft-remote-desktop-8-0/id715768417?mt=12)
+g.  Download [Microsoft Remote Desktop 8.0 for Mac](https://itunes.apple.com/us/app/microsoft-remote-desktop-8-0/id715768417?mt=12)
 
-j.  Add your credentials to Remote Desktop and select the resolution as 1440x960 (fits most laptop screens), select colour as high 8-bit and full screen is custom.
+h.  Add your credentials to Remote Desktop and select the resolution as 1440x960 (fits most laptop screens), select colour as high 8-bit and full screen is custom.
 
-k.  Double click on the Remote Desktop to log into Windows.  
+i.  Double click on the Remote Desktop profile you just created to log into Windows.  
 
-l.  Go up to the **WINDOWS USERS** instructions above and start from step 1.  
-
-***
+j.  Go up to the **WINDOWS USERS** instructions above to download and open the wallet.  
 
 ***
+
 
 ## 3. Stake Coins and Start Masternode
 
-a. Go to RECEIVE and create a New Address with the label: **MN1**  
+a. **Create your MASTERNODE PUBLIC ADDRESS.** Go to RECEIVE and create a New Address with the label: **MN1**   
 
-b. **Save Masternode Public Address.** Copy and paste the public address to your **Apollon Masternode Reference Document** under the header MASTERNODE PUBLIC ADDRESS.  
+b. **Save your MASTERNODE PUBLIC ADDRESS.** Copy and paste the address you just created to your **Apollon Masternode Reference Document** under the header **MASTERNODE PUBLIC ADDRESS**.  
 
-c. Go to the exchange you purchased your coins on and set up a withdrawal of **25,000** coins EXACTLY to the public address you just created in step 3.b.  **THIS IS VERY IMPORTANT, DO NOT SEND 25,100 COINS, ONLY SEND 25000 XAP TO MN1.  ALSO, YOU MUST DO THIS IN A SINGLE TRANSACTION.  YOU CAN NOT MAKE TWO 12,500 TRANSACTIONS TO THIS ADDRESS, THE SERVER WILL NOT REGISTER THIS AS A WALLET STAKE.  A SINGLE RECEIVING ADDRESS MUST ONLY HAVE ONE TRANSACTION OF 25,000 XAP SENT TO IT.  NEVER SEND ANY OTHER XAP TO THIS PUBLIC ADDRESS.  IF YOU WANT TO SEND ANY MORE XAP TO YOUR WALLET, CREATE A NEW ADDRESS.**
+c. Go to the exchange you purchased your coins on and set up a withdrawal of **25,000** coins EXACTLY to your **MASTERNODE PUBLIC ADDRESS** (the address you just created in step 3.b).  **THIS IS VERY IMPORTANT, ONLY SEND 25000 XAP IN A *SINGLE DEPOSIT* TO YOUR MASTERNODE PUBLIC ADDRESS.**  YOU CAN NOT MAKE MULTIPLE DEPOSITS TO YOUR MASTERNODE PUBLIC ADDRESS AND HAVE IT COUNT AS A STAKE.  FOR EXAMPLE, MAKING TWO DEPOSITS, ONE OF 10,000 AND ANOTHER OF 15,000 WILL NOT COUNT AS YOUR MASTERNODE STAKE.  IT HAS TO BE ONE SINGLE DEPOSIT OF 25,000 XAP.  There is a work around if you do make this mistake, it involves making another transaction to yourself after you've made multiple deposits.  Please contact me directly if you make this mistake and I can help you with this solution.  
 
-d. Wait for 16 confirmations.  To check the status of your transfer, go to your Desktop Wallet and go to **Transactions**.  Once you have initiated the transfer from the exchange, it will take a few minutes to show up in your wallet.  Once it has, you can double click on it and a 'Transaction details' pop-up will appear.  Under here, you will see **Status:** and it will tell you the number of confirmations that your transaction has achieved.  This pop-up does not update automatically, so close and reopen this pop-up until the number of confirmations is 16 or higher.   
+d. **Wait for 16 confirmations.**  To check the status of your transfer, go to your Desktop Wallet and go to **Transactions**.  Once you have initiated the transfer from the exchange, it will take a few minutes to show up in your wallet.  Once it has, you can double click on it and a 'Transaction details' pop-up will appear.  Under here, you will see **Status:** and it will tell you the number of confirmations that your transaction has achieved.  This pop-up does not update automatically, so close and reopen this pop-up until the number of confirmations is 16 or higher.   
 
 e. Go to **Help -> "Debug Window - Console"**  
 
@@ -302,18 +306,18 @@ The result will look something like this:
 }
 
 ```
-This value is your **TxHash** value that you will need in step 
+This value is your **TxHash** value and your **Output index** value that you will need in step 3.i below.
 
 g. Copy and paste this information into your **Apollon Masternode Reference Document**, under the header MASTERNODE OUTPUT.
 
-h. Go to **Masternodes** tab.
+h. Go to the **Masternodes** tab.
 
 i. Click **Create** and fill these details:  
 * Alias: **MN1**  
-* Address: **VPS_IP:PORT**  found under in your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS 
-* Privkey: **Masternode Private Key**  found under in your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS 
-* TxHash: **First value from 3.g**  also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE OUTPUT
-* Output index:  **Second value from 3.g, either a 1 or a 0**  also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE OUTPUT
+* Address: **VPS_IP:PORT from step 2.e above**.  Also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS 
+* Privkey: **Masternode Private Key from step 2.e above**.  Also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS 
+* TxHash: **First value from step 3.g above**.  Also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE OUTPUT
+* Output index:  **Second value from 3.g, either a 1 or a 0**.  Also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE OUTPUT
 * Reward address: leave blank  
 * Reward %: leave blank  
 
@@ -325,7 +329,7 @@ l. Go back to your SSH session and enter the following command and hit enter.
 ```
 Apollond masternode status
 ```
-Your status should now be 9 = Your masternode is remotely enabled and active.
+Your status should now be 9 (Your masternode is remotely enabled and active).
 ```
 {
     "vin" : "CTxIn(COutPoint(0000000000, 4294967295), coinbase )",
@@ -340,7 +344,7 @@ Your status should now be 9 = Your masternode is remotely enabled and active.
 
 ## CONGRATULATIONS
 
-You've just setup an Apollon masternode and it is actively participating in the network.  Next we'll verify that it's communicating on the network.  
+You've just setup an Apollon masternode and it is actively participating in the network.  Next we'll verify that it's communicating with the network so that you begin to receive payouts.  
 
 ***
 
@@ -356,9 +360,9 @@ In order to ensure that the server is communicating with the network there are t
 
 ***
 
-# a. Linux server status
+## 5a. Linux server status
 
-i.  **Apollon masternode status** 
+**i.  Apollon masternode status** 
 
 This is the most important command on the Linux server to ensure that your Masternode is running.  
 ```
@@ -400,11 +404,10 @@ Here is the list of possible Masternode statuses (note this is the same list as 
 
 9 = Your masternode is remotely enabled and active.
 
-**"pubKeyMasternode"**  Given the name of this field, one would expect that this field would be the one that is listed on the masternode public list here: [https://xap.overemo.com/masternodes](https://xap.overemo.com/masternodes).  It is not!  To look up your masternode on this list, use the public key you created in step 3.b  
+Ignore the other fields in this status.
 
-**"notCapableReason"**  notCapableReason seems to store a text string from the last found error on the server.  With that said, if your status is 8 or 9 and you still see a strange error here, like the one above, ignore it.  It is likely just the last error that your server encountered before going live.
+**ii.  Apollon getinfo** 
 
-ii.  **Apollon getinfo** 
 This is less important, but it will tell you if your server is incrementing blocks which will tell you that your server is in fact verifying transactions / blocks.  
 ```
 Apollond getinfo
@@ -434,14 +437,11 @@ will result in a response that looks something like this:
     "errors" : ""
 }
 ```
+If you repeat this command a few times over a 5 minute period and you see the **"blocks"** field incrementing, then your server is properly recording and verifying transactions.
 
+## 5b. Wallet masternode status
 
-Note: this is also the public address of your masternode that you will use to look up your masternode on [https://xap.overemo.com/masternodes](https://xap.overemo.com/masternodes).
-
-
-# b. Wallet masternode status
-
-i. **My Master Nodes.** 
+**i. My Master Nodes.** 
 
 * Open your wallet on windows
 
@@ -455,9 +455,11 @@ i. **My Master Nodes.**
 
 * Your masternode status should show as "Masternode is Running."
 
-ii.  **Start**  If your masternode is not responding with a "status" of 2 from the command Apollon masternode status described above under 5.a.i, then you likely need to remote start your masternode from your wallet.  
+If it doesn't show up as running, check your status on the Linux server and report to the Discord channel.
 
-* Select your masternode from this list
+**ii.  Start**  If your masternode is not responding with a "status" of 2 from the command Apollon masternode status described above under 5a.i, then you likely need to remote start your masternode from your wallet.  
+
+* Select and highlight your masternode from the list
 
 * Click the "Start" button.
 
@@ -467,7 +469,7 @@ Apollon masternode status
 ```
 * Your status should return to 8 or 9.  If it doesn't please ask on the Discord channel for help.
 
-iii. **Apollon Network**
+**iii. Apollon Network**
 
 * Select the **Apollon Network** tab.
 
@@ -481,7 +483,8 @@ iii. **Apollon Network**
 
 * If you still can't find it, move onto the next step to check for your server.  
 
-# c. Online list of XAP masternodes
+
+## 5c. Online list of XAP masternodes
 
 i. Visit this link [XAP List and status of masternodes](https://xap.overemo.com/masternodes).
 
@@ -491,35 +494,39 @@ iii. Perform a search in this webpage for your MASTERNODE PUBLIC ADDRESS.
 
 iv.  If you find it, you're good, your masternode is up and operating.  
 
-v.  If you can't find it, go back to the top of this section and start again to make note of all of your server status and wallet status details and then go to the discord channel to ask for help. 
+v.  If you can't find it, go back to the top of this section and start again to make note of all of your server status and wallet status details and then go to the Discord channel to ask for help. 
 
 
 ***
 
 
 ## 6. MAINTENANCE
-There really isn't much maintenance to a masternode once it's up and running.  However, you will want to ensure that it's setup and running properly from time to time.  If you find that your network status has dropped off after going through the details in section 5 above, try these commands to test your linux server. 
+If you ever find that your network status has dropped after going through the details in section 5 above, try these commands to test your linux server. 
 
 a. **systemctl status Apollon**
-This command will tell you if the masternode system running at all.  If it's not, you won't see your server on the network and the commands in section 5 wouldn't work at all.
+
+This command will tell you if the masternode system running at all.  If it's not, you won't see your server on the network and the commands in section 5 won't work at all.
 ```
 systemctl status Apollon
 ```
 
 b.  **systemctl is-enabled Apollon**
+
 This last command will tell you if Apollon is configured to start on boot.  
 ```
 systemctl is-enabled Apollon
 ```  
 
 c. **systemctl start Apollon**
+
 This command will start the masternode service for you if it has stopped running.  
 ```
 systemctl start Apollon
 ```  
 
 d. **systemctl stop Apollon**
-This command will stop the masternode service for you if you need to take your server offline for any reason.  
+
+This command will stop the masternode service for you if you need to take your server offline.  
 ```
 systemctl start Apollon
 ```
@@ -528,7 +535,7 @@ systemctl start Apollon
 
 ## Conclusion
 
-I hope this guide helped you sort out the building of a masternode for Apollon.  If you have any suggestions, comments or corrections, please send them to me on Discord, my username is fathertime100.  
+I hope this guide helped!  If you have any suggestions, comments or corrections, please send them to me on Discord, my username is fathertime100.  
 
 Thanks and Best Regards, 
 
@@ -551,7 +558,7 @@ All donations are highly appreciated!
 
 ***
 **Acknowledgements**
-This guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on this.  Also thank-you to the entire Apollon team on Discord who helped get through the weeds on setting this up.  Specifically, iTzShowTime, Visco, zoldur, XAP_MAX and MorpheusM, thanks team!
+This guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on the script.  Also thank-you to the entire Apollon team on Discord who helped get through the weeds on setting this up.  Specifically, iTzShowTime, Visco, zoldur, XAP_MAX and MorpheusM, thanks team!
 ***
 **DISCLAIMER:** The references contained herein are for information purposes only.  This guide is not intended to be investment advice.  Seek a duly licensed professional for investment advice before investing in any masternode.
 
