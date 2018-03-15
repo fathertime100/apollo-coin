@@ -77,12 +77,11 @@ e.  **Obtain your Masternote Private Key**.  After the script installs a number 
 Installing and setting up firewall to allow ingress on port 12116
 
 =============================================================================================
-                                  CONGRATULATIONS!!!
+    CONGRATULATIONS!!!  Your Apollon Masternode is up and running listening on port 12116.
 =============================================================================================
 
 MASTERNODE SERVICE DETAILS
 
-Your Apollon Masternode is up and running listening on port 12116.
 The server configuration file is located at: /root/.Apollon/Apollon.conf
 Your server IP Address and Port are (VPS_IP:PORT): 45.32.224.15:12116
 YOUR MASTERNODE PRIVATEKEY is: adfwivhw0ru340230fMZdasdfasdweav3459834u5B1kxHV2398aav93
