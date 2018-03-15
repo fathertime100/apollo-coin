@@ -299,8 +299,9 @@ function important_information() {
  echo -e " "
  echo -e "==========================================================================================================="
  echo -e " "
- echo -e "Please copy and paste the above data into your ${GREEN}$COIN_NAME${NC} Masternode Reference Document."
- echo -e "You will need this information to complete your installation and to maintain your masternode."
+ echo -e "Please copy and paste the above data into your ${GREEN}$COIN_NAME${NC} Masternode Reference Document under"
+ echo -e "the header MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation"
+ echo -e "and to maintain your masternode."
 }
 
 function setup_node() {
