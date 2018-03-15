@@ -1,11 +1,6 @@
 # Apollon Coin (XAP) Step-by-Step Install Instructions
 This guide will help you quickly and easily install an [Apollon Masternode](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04 and it will help you set up your wallet with the coins to support the masternode.  Use this guide at your own risk.
 ***
-**Acknowledgements**
-This guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on this.  Also thank-you to the entire Apollon team on Discord who helped get through the weeds on setting this up.  Specifically, iTzShowTime, Visco, zoldur, XAP_MAX and MorpheusM, thanks team!
-***
-**DISCLAIMER:** The references contained herein are for information purposes only.  This guide is not intended to be investment advice.  Seek a duly licensed professional for investment advice before investing in any masternode.
-***
 This guide assumes some basic knowledge of Linux and Cryptocurrency Exchanges.  You do not need to be an expert to complete this tutorial.  If you have any questions, please feel free to reach out to me directly on Discord, my username is fathertime100.  
 ***
 ## OVERVIEW
@@ -553,3 +548,11 @@ All donations are highly appreciated!
 **LTC**: LfEMCmyEykszHXj1eLxgvH2HPRrsdajPcM
 
 **DASH**: XfVFJM97zG4ckgm9aJ52PQ1Zc3NVtdAh2F
+
+
+***
+**Acknowledgements**
+This guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on this.  Also thank-you to the entire Apollon team on Discord who helped get through the weeds on setting this up.  Specifically, iTzShowTime, Visco, zoldur, XAP_MAX and MorpheusM, thanks team!
+***
+**DISCLAIMER:** The references contained herein are for information purposes only.  This guide is not intended to be investment advice.  Seek a duly licensed professional for investment advice before investing in any masternode.
+
