@@ -59,19 +59,19 @@ a. **Setup Linux VPS.** Setup a Linux Ubuntu 16.04 virtual private server (VPS) 
 
 When you create your VPS you will provide it a hostname / alias.  Copy and paste the hostname / alias into your **Apollon Masternode Reference File** under the header MASTERNODE ALIAS
 
-b. **Start SSH Session.** SSH into your server using Terminal on a Mac or [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows.  If this is your first time doing this, please watch the video in step 2.a.
+b. **Start an SSH Session.** SSH into your server using Terminal on a Mac or [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows.  If this is your first time doing this, please watch the video in step 2.a.
 
-c. **Get installation script.** Copy and paste the below command into your SSH session and hit enter.  This will download the masternode installation script onto your VPS.  
+c. **Get the installation script.** Copy and paste the below command into your SSH session and hit enter.  This will download the masternode installation script onto your VPS.  
 ```
 wget -q https://raw.githubusercontent.com/fathertime100/apollon/master/apollon_install.sh
 ```
 
-d. **Run installation script.** Copy and paste the below command into your SSH session and press enter. Note that this process will take between about 30 minutes to complete.  Go and get a coffee.
+d. **Run the installation script.** Copy and paste the below command into your SSH session and press enter. Note that this process will take between about 30 minutes to complete.  Go and get a coffee.
 ```
 bash apollon_install.sh
 ```
 
-e.  **Obtain Masternote Private Key**.  After the script installs a number of programs, it will ask you to **"Press enter to generate your Masternode Private Key."**.  Press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look like this:
+e.  **Obtain your Masternote Private Key**.  After the script installs a number of programs, it will ask you to **"Press enter to generate your Masternode Private Key."**.  Press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look like this:
 
 ```
 Installing and setting up firewall to allow ingress on port 12116
@@ -110,7 +110,7 @@ You will need this information to complete your installation and to maintain you
 
 e. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
 
-f. **Check server status.** Next we'll check the status of the server.  Copy and paste the below command into your SSH session and hit enter.  
+f. **Check the server status.** Next we'll check the status of the server.  Copy and paste the below command into your SSH session and hit enter.  
 ```
 systemctl status Apollon
 ```
@@ -128,7 +128,7 @@ Mar 14 19:19:03 APOLLON-2 systemd[1]: Started Apollon service.
 ```
 As long as your server says **"Active: active (running)"**, you're good to go.  
 
-g.  **Check server network connectivity.** Next, let's check to see that it's syncing blocks with the network.  Copy and paste the below command into your SSH session and hit enter.  
+g.  **Check the servers network connectivity.** Next, let's check to see that it's syncing blocks with the network.  Copy and paste the below command into your SSH session and hit enter.  
 ```
 Apollond getinfo
 ```
@@ -159,7 +159,7 @@ You will see a result that is similiar to this:
 ```
 Take note of the **"blocks"** field.  It should be around 8 to 10 thousand at this point, if it's higher, don't worry, you were just slow to enter this command after the previous one and your server is syncing with the network, everything is ok.  
 
-h.  **Check masternode status.** Now we'll check the masternode status by copying and pasting this command into the ssh session and hitting enter.  
+h.  **Check the masternode status.** Now we'll check the masternode status by copying and pasting this command into the ssh session and hitting enter.  
 ```
 Apollond masternode status
 ```
