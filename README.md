@@ -23,7 +23,7 @@ It involves six steps:
 ***
 
 ## BEFORE YOU START
-You need a **Apollon Masternode Reference Document** to save all your masternode details as you go through this process.  Download the text file that I have created [here](https://drive.google.com/open?id=1zr5txLveadmKaUDBw4p20Pn-VD8CmbFb).  You will use this as a source to copy and paste your private and public key information into as you go through this tutorial.  You will also find links to all the resources I describe herein.
+You need a **Apollon Masternode Reference Document** to save all your masternode details as you go through this process.  Download the text file that I have created [here](https://drive.google.com/open?id=1QnOKZbyXWPBFoFgx6610nJfn-To22I0o).  You will use this as a source to copy and paste your private and public key information into as you go through this tutorial.  You will also find links to all the resources I describe herein.
 
 ***
 
