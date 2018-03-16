@@ -90,22 +90,6 @@ Your server IP Address and Port are (VPS_IP:PORT): 45.32.224.15:12116
 YOUR MASTERNODE PRIVATEKEY is: adfwivhw0ru340230fMZdasdfasdweav3459834u5B1kxHV2398aav93
 
 =============================================================================================
-
-STARTING AND STOPPING THE MASTERNODE SERVICE
-
-To start the server, run this command: systemctl start Apollon.service
-To stop the server, run this command: systemctl stop Apollon.service
-
-=============================================================================================
-
-CHECKING THE STATUS OF YOUR MASTERNODE
-
-To check if your masternode is running, run this command: systemctl status Apollon
-To check the number of blocks synced to your masternode, run this command: Apollond getinfo
-To check the status of your masternode, run this command: Apollond masternode status
-
-=============================================================================================
-
 Please copy and paste the above data into a file and store in a secure location.
 You will need this information to complete your installation and to maintain your masternode.
 ```
