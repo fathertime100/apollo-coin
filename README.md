@@ -3,6 +3,9 @@ This guide will help you quickly and easily install an [Apollon Masternode](http
 ***
 This guide assumes some basic knowledge of Linux and Cryptocurrency Exchanges.  You do not need to be an expert to complete this tutorial.  If you have any questions, please feel free to reach out to me directly on [Discord](https://discordapp.com/download) and I'd be happy to help!  My username is fathertime100.   
 ***
+## YOUTUBE VIDEO
+Please visit this [youtube video](http://www.youtube.com/  ) that I made of this entire process to help you set everything up.  It's a good idea to watch the video through it's entirety before you take on this task, it'll bring clarity to every step explained below.  
+***
 ## OVERVIEW
 This process will take some time to complete.  If you are adept at masternode setup it will take you around two hours.  If you are a first-timer, expect to put in a few hours to complete this process.
 
@@ -385,10 +388,10 @@ Apollond masternode status
 This will give you a response that looks like this:
 ```
 {
-    "vin" : "CTxIn(COutPoint(b35aaf4fba, 1), scriptSig=)",
-    "service" : "144.202.88.54:12116",
+    "vin" : "CTxIn(COutPoint(0000000000, 4294967295), coinbase )",
+    "service" : "108.61.195.216:12116",
     "status" : 9,
-    "pubKeyMasternode" : "AKCeCBJm7GXHX8okPsSJ65cp9iKpefxnD7",
+    "pubKeyMasternode" : "APFxbJgmgxCbWYqUAJQv3TtKERVUQY6yvz",
     "notCapableReason" : "Could not find suitable coins!"
 }
 ```
