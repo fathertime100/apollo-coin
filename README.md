@@ -213,11 +213,9 @@ Your **"blocks"** field should have increased from the previous time you ran thi
 
 Allow your masternode service some time to continue to sync with the other masternodes on the network.  To determine when it's complete, keep running this command over and over again until you notice that the **"blocks"** field is not incrementing rapidly any longer.  
 
-If your **"status"** from running the **Apollond masternode status** command was a 2, this means that your masternode is active and synced to the network and now needs the 25,000 coin stake in order to become a participant masternode on the Apollon network.   
+When your **"status"** from running the **Apollond masternode status** command becomes a 2, your masternode has become active and has synced to the network and now needs the 25,000 coin stake in order to become a participant masternode on the Apollon network. Once your status is 2, move onto step 3 of the tutorial.  
 
-Keep running the **Apollond masternode status** command until you achieve a **"status"** of 2.  Once your status is 2, move onto step 3 of the tutorial.  
-
-Note: as of the date of that this document was written, it shouldn't take the masternode service more than 10 or 15 minutes to sync with the rest of the masternodes on the network.
+Note: as of the date of that this document was written (14-Mar-2018), it shouldn't take the masternode service more than 10 or 15 minutes to sync with the rest of the masternodes on the network.
 
 ### Potential Issues:
 Some times when Apollon starts for the first time, it will not update the blockchain, meaning you won't see your blocks increasing after running the Apollon getinfo command.  If this is happening to you, try running these commands in order to fix it:
