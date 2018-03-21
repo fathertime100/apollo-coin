@@ -121,6 +121,7 @@ bind=$NODEIP
 masternodeaddr=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 addnode=144.202.88.54:12116
+addnode=104.238.156.64:12116
 addnode=95.29.191.30:12117  
 addnode=52.41.181.185:12116  
 addnode=52.32.174.206:12116  
