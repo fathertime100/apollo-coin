@@ -464,7 +464,7 @@ If it doesn't show up as running, check your status on the Linux server and repo
 
 * Go back to your ssh session and run the following command again:
 ```
-Apollon masternode status
+Apollond masternode status
 ```
 * Your status should return to 8 or 9.  If it doesn't please ask on the Discord channel for help.
 
