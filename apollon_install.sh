@@ -9,7 +9,7 @@ COIN_REPO='https://github.com/apollondeveloper/ApollonCoin'
 COIN_NAME='Apollon'
 COIN_PORT=12116
 RPC_PORT=12117
-
+HOST=$(hostname)
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -271,19 +271,23 @@ function create_swap() {
 }
 
 
+
+
 function important_information() {
  echo
- echo -e "==========================================================================================================="
+ echo -e "================================================================================="
  echo -e "    ${GREEN}CONGRATULATIONS!!!${NC} Your ${GREEN}$COIN_NAME${NC} masternode is up and running listening on port ${GREEN}$COIN_PORT${NC}" 
- echo -e "==========================================================================================================="
+ echo -e "================================================================================="
  echo -e " "
  echo -e "MASTERNODE SERVICE DETAILS"
  echo -e " "
- echo -e "The server configuration file is located at: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
- echo -e "Your server IP Address and Port are: ${RED}$NODEIP:$COIN_PORT${NC}"
- echo -e "Your MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
+ echo -e "The masternode ${GEEN}Alias*${NC} is: ${RED}$HOST${NC}
+ echo -e "Your masternode ${GEEN}Address*${NC} is: ${RED}$NODEIP:$COIN_PORT${NC}"
+ echo -e "Your masternode Private Key (${GEEN}PrivKey*${NC}) is: ${RED}$COINKEY${NC}"
  echo -e " "
- echo -e "==========================================================================================================="
+ echo -e "The server configuration file is located at: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
+ echo -e " "
+ echo -e "================================================================================="
  echo -e " "
  echo -e "Please copy and paste the above data into your ${GREEN}$COIN_NAME${NC} Masternode Reference Document under"
  echo -e "the header MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation."
