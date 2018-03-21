@@ -527,7 +527,7 @@ d. **systemctl stop Apollon**
 
 This command will stop the masternode service for you if you need to take your server offline.  
 ```
-systemctl start Apollon
+systemctl stop Apollon
 ```
 
 ***
