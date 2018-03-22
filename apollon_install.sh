@@ -281,7 +281,7 @@ function important_information() {
  echo -e " "
  echo -e "MASTERNODE SERVICE DETAILS"
  echo -e " "
- echo -e "The masternode ${GEEN}Alias*${NC} is: ${RED}$HOST${NC}
+ echo -e "The masternode ${GEEN}Alias*${NC} is: ${RED}$HOST${NC}"
  echo -e "Your masternode ${GEEN}Address*${NC} is: ${RED}$NODEIP:$COIN_PORT${NC}"
  echo -e "Your masternode Private Key (${GEEN}PrivKey*${NC}) is: ${RED}$COINKEY${NC}"
  echo -e " "
