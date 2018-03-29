@@ -79,9 +79,9 @@ e.  **Obtain your Masternote Private Key**.  After the script installs a number 
 ```
 Installing and setting up firewall to allow ingress on port 12116
 
-=============================================================================================
-  CONGRATULATIONS!!!  Your Apollon Masternode is up and running listening on port 12116.
-=============================================================================================
+===================================================================================================
+     CONGRATULATIONS!!!  Your Apollon Masternode is up and running listening on port 12116.
+===================================================================================================
 
 MASTERNODE SERVICE DETAILS
 
@@ -91,10 +91,9 @@ Your masternode Private Key (PrivKey*) is: adfwivhw0ru340230fMZdasdfasdweav34598
 
 The server configurration file is located at : /root/.Apollon/Apollon.conf
 
-=================================================================================
-Please copy and paste the above data into Apollon Masternode Reference Document
-under the header MASTERNODE SERVICE DETAILS.  You will need this information to
-complete your installation.
+====================================================================================================
+Please copy and paste the above data into Apollon Masternode Reference Document under the header 
+MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation.
 ```
 
 e. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
