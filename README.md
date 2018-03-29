@@ -74,24 +74,27 @@ d. **Run the installation script.** Copy and paste the below command into your S
 bash apollon_install.sh
 ```
 
-e.  **Obtain your Masternote Private Key**.  After the script installs a number of programs and compiles the Apollond daemon, it will ask you to **"Press enter to generate your Masternode Private Key."**.  Press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look like this:
+e.  **Obtain your Masternote Private Key**.  After the script installs a number of programs and compiles the Apollond daemon, it will ask you to **"Press enter to generate your Masternode Private Key."**.  Press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look something like this:
 
 ```
 Installing and setting up firewall to allow ingress on port 12116
 
 =============================================================================================
-    CONGRATULATIONS!!!  Your Apollon Masternode is up and running listening on port 12116.
+  CONGRATULATIONS!!!  Your Apollon Masternode is up and running listening on port 12116.
 =============================================================================================
 
 MASTERNODE SERVICE DETAILS
 
-The server configuration file is located at: /root/.Apollon/Apollon.conf
-Your server IP Address and Port are (VPS_IP:PORT): 45.32.224.15:12116
-YOUR MASTERNODE PRIVATEKEY is: adfwivhw0ru340230fMZdasdfasdweav3459834u5B1kxHV2398aav93
+Your masternode Alias* is: APOLLON-1
+Your masternode Address* is: 45.32.224.15:12116
+Your masternode Private Key (PrivKey*) is: adfwivhw0ru340230fMZdasdfasdweav3459834u5B1kxHV2398aav93
 
-=============================================================================================
-Please copy and paste the above data into a file and store in a secure location.
-You will need this information to complete your installation and to maintain your masternode.
+The server configurration file is located at : /root/.Apollon/Apollon.conf
+
+=================================================================================
+Please copy and paste the above data into Apollon Masternode Reference Document
+under the header MASTERNODE SERVICE DETAILS.  You will need this information to
+complete your installation.
 ```
 
 e. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
