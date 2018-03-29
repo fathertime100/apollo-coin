@@ -387,15 +387,15 @@ If your masternode's status is not 8 or 9, but is 2, the most likely culript is 
 
 Here is the list of possible Masternode statuses (note this is the same list as from above).
 
-1 = Your masternode has not been processed by the network yet.  Please wait.
+0 = Your masternode has not been processed by the network yet. Please wait.
 
-2 = Your masternode is active and synced to the network.
+1 = Your masternode is active.
 
-3 = Your masternode is inactive.
+2 = Your masternode is inactive and disconnected from your wallet, please start the masternode from your wallet.
 
-4 = Your masternode has stopped.
+3 = Your masternode has stopped.
 
-5 = Your masternode seed transaction hasn't reached the minimum of 16 confirmations.  
+4 = Your masternode transaction hasn't reached the minimum of 15 confirmations.
 
 6 = Your masternode port is closed.
 
@@ -404,6 +404,8 @@ Here is the list of possible Masternode statuses (note this is the same list as 
 8 = Your masternode is syncing to the network.
 
 9 = Your masternode is remotely enabled and active.
+
+Your masternode should currently have a status of either 8 or 2.
 
 Ignore the other fields in this status.
 
