@@ -318,7 +318,7 @@ m. Copy and paste this information into your **Apollon Masternode Reference Docu
 n. Go to the **Masternodes** tab.
 
 o. Click **Create** and fill these details:  
-* Alias: **MN1**  
+* Alias: **Alias* from step 2.e above**   
 * Address: **VPS_IP:PORT from step 2.e above**.  Also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS 
 * Privkey: **Masternode Private Key from step 2.e above**.  Also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS 
 * TxHash: **First value from step 3.g above**.  Also found under in your **Apollon Masternode Reference Document** under the header MASTERNODE OUTPUT
