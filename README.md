@@ -546,6 +546,32 @@ fathertime100
 
 
 
+## v1.04 Upgrade commands for YouTube video
+
+The below commands are to support the Linux VPS Masternode Service upgrade video located on [YouTube](https://youtu.be/A8BcEUnuw5U).
+```
+Apollond getinfo
+
+systemctl stop Apollon
+
+systemctl stop Apollon
+
+Apollond masternode status
+
+rm Apollond.tar.gz >/dev/null 2>&1
+
+wget https://github.com/apollondeveloper/ApollonCoin/releases/download/1.0.4/Apollond.tar.gz
+
+tar xvzf Apollond.tar.gz
+
+cp Apollond /usr/local/bin
+
+systemctl start Apollon
+
+Apollond masternode status
+```
+
+
 ## Donations
 
 All donations are highly appreciated!
