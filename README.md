@@ -236,18 +236,22 @@ Apollond getinfo
 
 After the masternode is up and running, you need to configure a desktop wallet to hold your masternode stake and to recieve your payouts.
 
-**WINDOWS USERS** (Mac users see below)
+If you're like me and use a laptop that won't be on 24/7 to stake coins with, you'll need to set up a VPS (which is more secure anyway than an everyday use machine) to set your wallets up on.  
 
-a. Download the wallet from here: [Apollon Windows Wallet](https://github.com/apollondeveloper/ApollonCoin/releases/download/1.0.3/Apollon-qt.exe)
+**WINDOWS USERS** 
+
+a. Download the wallet from here: [Apollon Windows Wallet](https://github.com/apollondeveloper/ApollonCoin/releases/download/1.0.4/Apollon-qt.exe)
 
 b. Open the Apollon Desktop Wallet.  
 
-
 **MAC USERS**
 
-**DO NOT USE THE MAC WALLET, IT DOES NOT WORK AS OF 14-03-2018**
+a. Download the wallet from here: [Apollon Mac Wallet](https://github.com/apollondeveloper/ApollonCoin/releases/download/1.0.4/Apollon-Qt-mac.dmg)
 
-In order to keep your Masternode and your wallet seperate, you'll need to take on a little more cost, but you'll be able to use this for other masternode wallets that don't work on Mac yet as well. 
+b. Open the Apollon Desktop Wallet.  
+
+**IF YOU WANT TO STAKE COINS TO RECEIVE 100% OF THE REWARDS AVAILABLE**
+
 
 a.  Setup a windows VPS on [Virmach](https://virmach.com/windows-remote-desktop-vps/)
 
