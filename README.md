@@ -286,7 +286,7 @@ c. On the exchange, set up a withdrawal of **25,100** coins to the **FROM EXCHAN
 
 d. Wait for 16 confirmation to settle those coins.
 
-e. Go back to RECEIVE in the wallet and create a new address, which will become your **MASTERNODE PUBLIC ADDRESS**, with the label: **MN1**
+e. Go back to RECEIVE in the wallet and create a new address, which will become your **MASTERNODE PUBLIC ADDRESS**, with the label: **APOLLON-1** (or whatever the Alias* output you recieved above was)
 
 F. **Save your MASTERNODE PUBLIC ADDRESS.** Copy and paste the address you just created to your **Apollon Masternode Reference Document** under the header **MASTERNODE PUBLIC ADDRESS**.  
 
