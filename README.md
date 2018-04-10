@@ -554,8 +554,6 @@ Apollond getinfo
 
 systemctl stop Apollon
 
-systemctl stop Apollon
-
 Apollond masternode status
 
 rm Apollond.tar.gz >/dev/null 2>&1
