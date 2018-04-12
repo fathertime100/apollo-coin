@@ -215,7 +215,7 @@ echo -e "Preparing the system to install an ${GREEN}$COIN_NAME Masternode Servic
 echo -e " "
 echo -e "This installation will take around 10 minutes to complete."
 echo -e " "
-echo -e "Leave this terminal session open until you are prompted to generate your private key."
+echo -e "Leave this terminal session open until you are provided the final installation screen with your server details."
 echo -e " "
 echo -e "The next prompt will occur in about 5 minutes.  Please wait."
 DEBIAN_FRONTEND=noninteractive apt-get install pv > /dev/null 2>&1
