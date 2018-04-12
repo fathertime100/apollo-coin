@@ -77,28 +77,29 @@ bash apollon_install.sh
 e.  **Obtain your Masternote Private Key**.  After the script installs a number of programs and compiles the Apollond daemon, it will ask you to **"Press enter to generate your Masternode Private Key."**.  Press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look something like this:
 
 ```
-Installing and setting up firewall to allow ingress on port 12116
-
 ===================================================================================================
-     CONGRATULATIONS!!!  Your Apollon Masternode is up and running listening on port 12116.
+ CONGRATULATIONS!!! Your Apollon masternode service has been installed and is running.
 ===================================================================================================
 
 MASTERNODE SERVICE DETAILS
 
-Your masternode Alias* is: APOLLON-1
-Your masternode Address* is: 45.32.224.15:12116
-Your masternode Private Key (PrivKey*) is: adfwivhw0ru340230fMZdasdfasdweav3459834u5B1kxHV2398aav93
+Your masternode Alias* is: APOLLON-3
+Your masternode Address* is: 45.76.242.8:12116
+Your masternode Private Key (PrivKey*) is: 69UC7qz8jc46HJ7w3SykbjTuaZsYxEQQNhJT7TZRFNeDTFKPML8
 
-The server configurration file is located at : /root/.Apollon/Apollon.conf
+The Apollon masternode service configuration file is located at: /root/.Apollon/Apollon.conf
 
-====================================================================================================
-Please copy and paste the above data into Apollon Masternode Reference Document under the header 
-MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation.
+The firewall has been configured to allow connections on port 12116
+
+===================================================================================================
+
+Please copy and paste the above data into your Apollon Masternode Reference Document under the
+header MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation.
 ```
 
-e. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
+f. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
 
-f. **Check the server status.** Next we'll check the status of the server.  Run the command below.  
+g. **Check the server status.** Next we'll check the status of the server.  Run the command below.  
 ```
 systemctl status Apollon
 ```
@@ -116,15 +117,15 @@ Mar 14 19:19:03 APOLLON-2 systemd[1]: Started Apollon service.
 ```
 As long as your server says **"Active: active (running)"**, you're good to go.  
 
-g.  **Check the servers network connectivity.** Next, we'll verify that the masternode service is syncing blocks with the network.  Run the command below.  
+h.  **Check the servers network connectivity.** Next, we'll verify that the masternode service is syncing blocks with the network.  Run the command below.  
 ```
 Apollond getinfo
 ```
 You will see a result that is similiar to this:
 ```
 {
-    "version" : "v1.0.3.0-60028",
-    "protocolversion" : 60028,
+    "version" : "v1.0.4.0-60028",
+    "protocolversion" : 60030,
     "walletversion" : 60000,
     "balance" : 0.00000000,
     "darksend_balance" : 0.00000000,
@@ -132,13 +133,13 @@ You will see a result that is similiar to this:
     "stake" : 0.00000000,
     "blocks" : 8293,
     "timeoffset" : 0,
-    "moneysupply" : 20686950.00000000,
+    "moneysupply" : 9581150.00000000,
     "connections" : 12,
     "proxy" : "",
     "ip" : "108.61.195.216",
-    "difficulty" : 30105.01429933,
+    "difficulty" : 8.52948952,
     "testnet" : false,
-    "keypoololdest" : 1521055109,
+    "keypoololdest" : 1523509173,
     "keypoolsize" : 101,
     "paytxfee" : 0.01000000,
     "mininput" : 0.00000000,
@@ -147,7 +148,7 @@ You will see a result that is similiar to this:
 ```
 Take note of the **"blocks"** field.  It should be around 8 to 10 thousand at this point, if it's higher, don't worry, you were just slow to enter this command after the previous one and your masternode service is syncing with the network, everything is ok.  
 
-h.  **Check the masternode status.** Now we'll check the masternode status.  Run the command below.  
+i.  **Check the masternode status.** Now we'll check the masternode status.  Run the command below.  
 ```
 Apollond masternode status
 ```
@@ -190,22 +191,22 @@ Apollond getinfo
 Your **"blocks"** field should have increased from the previous time you ran this command.
 ```
 {
-    "version" : "v1.0.3.0-60028",
-    "protocolversion" : 60028,
+    "version" : "v1.0.4.0-60028",
+    "protocolversion" : 60030,
     "walletversion" : 60000,
     "balance" : 0.00000000,
     "darksend_balance" : 0.00000000,
     "newmint" : 0.00000000,
     "stake" : 0.00000000,
-    "blocks" : 19203,
+    "blocks" : 28572,
     "timeoffset" : 0,
-    "moneysupply" : 20686950.00000000,
+    "moneysupply" : 9581150.00000000,
     "connections" : 12,
     "proxy" : "",
     "ip" : "108.61.195.216",
-    "difficulty" : 30105.01429933,
+    "difficulty" : 8.52948952,
     "testnet" : false,
-    "keypoololdest" : 1521055109,
+    "keypoololdest" : 1523509173,
     "keypoolsize" : 101,
     "paytxfee" : 0.01000000,
     "mininput" : 0.00000000,
