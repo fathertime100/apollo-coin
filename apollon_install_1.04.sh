@@ -294,11 +294,15 @@ function important_information() {
  echo -e " "
  echo -e "Please copy and paste the above data into your ${GREEN}$COIN_NAME${NC} Masternode Reference Document under the"
  echo -e "header MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation."
- echo -e ""
- echo -e ""
- echo -e ""
- echo -e ""
- echo -e ""
+ echo -e " "
+ echo -e "==================================================================================================="
+ echo -e " "
+ echo -e "Next step:"
+ echo -e " "
+ echo -e "Return to the guide (https://github.com/fathertime100/apollon) and continue with step 2f."
+ echo -e " "
+ echo -e "==================================================================================================="
+
 }
 
 function setup_node() {
