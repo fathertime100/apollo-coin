@@ -1,19 +1,19 @@
-# Apollon Coin (XAP) Masternode Setup Tutorial
-This guide will help you quickly and easily setup an [Apollon Masternode](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04 and it will help you set up your wallet with the coins to support the masternode.  Use this guide at your own risk.
+# Apollon Coin (XAP) Masternode Service v1.04 Setup Tutorial
+This guide will help you quickly and easily setup an [Apollon Masternode Service v1.04](http://apolloncoin.io/) on a Linux server running Ubuntu 16.04 and it will help you set up your wallet with the coins to support the masternode.  Use this guide at your own risk.
 ***
-This guide assumes some basic knowledge of Linux and Cryptocurrency Exchanges.  You do not need to be an expert to complete this tutorial.  If you have any questions, please feel free to reach out to me directly on [Discord](https://discordapp.com/download) and I'd be happy to help!  My username is fathertime100.   
+This guide assumes some basic knowledge of Linux and Cryptocurrency Exchanges.  You do not need to be an expert to complete this tutorial, but you do need some basic technical skills.  If you have any questions, please feel free to reach out to the Apollon Support Team at support@apollon.one!
 ***
 ## YOUTUBE VIDEO
-Please visit this [youtube video](https://youtu.be/Y5lva4eqiKU) that I made of this entire process to help you set everything up.  It's a good idea to watch the video through it's entirety before you take on this task, it'll bring clarity to every step explained below.  
+Please visit this [youtube video](https://youtu.be/Y5lva4eqiKU) that has been updated with the entire process for the latest version (v1.04) to help you set everything up.  It's a good idea to watch the video through it's entirety before you take on this task, it'll bring clarity to every step explained below.  
 ***
 ## OVERVIEW
-This process will take some time to complete.  If you are adept at masternode setup it will take you around two hours.  If you are a first-timer, expect to put in a few hours to complete this process.
+This process will take some time to complete.  If you are adept at masternode setup it will take you around one and a half hours.  If you are a first-timer, expect to put in a few hours to complete this process.
 
 It involves six steps:
 
-1.  Purchase XAP Coins - 40 to 120 minutes
+1.  Purchase XAP Coins - 40 to 60 minutes
 
-2.  Masternode Installation - 20 minutes
+2.  Masternode Service Installation - 20 minutes
 
 3.  Wallet Installation - 20 minutes
 
@@ -33,22 +33,26 @@ You need a **Apollon Masternode Reference Document** to save all your masternode
 ## 1.  Purchase XAP Coins
 We will start by purchasing 25,100 Apollo Coins to pay for our stake in the masternode (25,000 XAP) and to pay for the transaction fees associated to buying and transferring the coins around (100 XAP).
 
-a.  **Setup an exchange account.**  Set up an exchange account on either [Graviex](https://graviex.net/markets/xapbtc) or [CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC). These are the only two exchanges where Apollon (XAP) is currently traded.
+a.  **Setup an exchange account.**  Set up an exchange account on one of the following three exchanges:
 
-b.  **Calculate how much BTC you need to transfer.**  Look up the current price of [BTC to XAP](https://graviex.net/markets/xapbtc) and calculate how much BTC you'll need to transfer to the exchange in order to purchase **25,100 XAP**.  
+    i.  [Coinexchange](https://www.coinexchange.io/market/XAP/BTC)
+    ii. [Graviex](https://graviex.net/markets/xapbtc)
+    iii.[CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC)
+    
+b.  **Calculate how much BTC you need to transfer.**  Look up the current price of [BTC to XAP](https://www.coinexchange.io/market/XAP/BTC) and calculate how much BTC you'll need to transfer to the exchange in order to purchase **25,100 XAP**.  
 
-For example: As of March 14th, 2018 1 XAP = ~0.00003 BTC.  25,100 x 0.00003 = 0.753 BTC.  As the price of BTC and XAP can fluctuate quite a lot between the time that you begin your transfer of BTC to the time that you receive it to purchase your XAP on one of the exchanges, I recommend that you increase the amount of BTC that you transfer to the exchange by 5%.  For example, 0.753 x 1.05 = 0.7905 BTC.  This **should** ensure that you have enough BTC to pay for your XAP once it arrives at the exchange.  
+For example: As of March 14th, 2018 1 XAP = ~0.00001850 BTC.  25,100 x 0.00001850 = 0.465 BTC.  As the price of BTC and XAP can fluctuate between the time that you begin your transfer of BTC to the time that you receive it to purchase your XAP on one of the exchanges, I recommend that you increase the amount of BTC that you transfer to the exchange by 5%.  For example, 0.465 x 1.05 = 0.488 BTC.  This **should** ensure that you have enough BTC to pay for your XAP once it arrives at the exchange.  
 
 Here is the complete calculation.
 ```
-    25,100
-x  0.00003     <== replace this value with the current trading price of XAPBTC on the exchange
-x     1.05
-----------
-    0.7905 BTC
+       25,100
+x  0.00001850     <== replace this value with the current trading price of XAPBTC on the exchange
+x        1.05
+-------------
+    0.488 BTC
 ```
 
-c.  **Transfer the BTC to the exchange.**  Withdraw the BTC amount you calculated in step 2 from one of your BTC wallets and Deposit it to the exchange.  Note that currently, BTC withdrawal/deposits take about 30-40 minutes to be fully confirmed right now.  Use your source wallet to trace the withdrawal transaction as neither exchange displays incoming deposits or their confirmations.
+c.  **Transfer the BTC to the exchange.**  Withdraw the BTC amount you calculated in step 2 from one of your BTC wallets and Deposit it to the exchange.  Note that currently, BTC withdrawal/deposits take about 30-40 minutes to be fully confirmed.  Use your source wallet to trace the withdrawal transaction.
 
 d.  **Buy your XAP.**  Initiate a buy order and wait for the order to be filled.  Depending on the market volume, this can take between 5 to 60 minutes.
 
@@ -66,12 +70,12 @@ b. **Start an SSH Session.** SSH into your server using Terminal on a Mac or [Pu
 
 c. **Get the installation script.** Copy and paste the below command into your SSH session and hit enter.  This will download the masternode installation script onto your VPS.  
 ```
-wget -q https://raw.githubusercontent.com/fathertime100/apollon/master/apollon_install.sh
+wget -q https://raw.githubusercontent.com/fathertime100/apollon/master/apollon_install_1.04.sh
 ```
 
 d. **Run the installation script.** Copy and paste the below command into your SSH session and press enter. Note that this process will take between about 20 minutes to complete.  Go and get a coffee.
 ```
-bash apollon_install.sh
+bash apollon_install_1.04.sh
 ```
 
 e.  **Obtain your Masternote Private Key**.  After the script installs a number of programs and compiles the Apollond daemon, it will ask you to **"Press enter to generate your Masternode Private Key."**.  Press enter.  It will take another few seconds to complete this task and then you'll be presented with a result that will look something like this:
@@ -95,11 +99,17 @@ The firewall has been configured to allow connections on port 12116
 
 Please copy and paste the above data into your Apollon Masternode Reference Document under the
 header MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation.
+
+===================================================================================================
+
+Please return to the guide (https://github.com/fathertime100/apollon) and continue with step 2f.
+
+===================================================================================================
 ```
 
-f. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
+e. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
 
-g. **Check the server status.** Next we'll check the status of the server.  Run the command below.  
+f. **Check the server status.** Next we'll check the status of the server.  Run the command below.  
 ```
 systemctl status Apollon
 ```
@@ -117,7 +127,7 @@ Mar 14 19:19:03 APOLLON-2 systemd[1]: Started Apollon service.
 ```
 As long as your server says **"Active: active (running)"**, you're good to go.  
 
-h.  **Check the servers network connectivity.** Next, we'll verify that the masternode service is syncing blocks with the network.  Run the command below.  
+g.  **Check the servers network connectivity.** Next, we'll verify that the masternode service is syncing blocks with the network.  Run the command below.  
 ```
 Apollond getinfo
 ```
@@ -148,7 +158,7 @@ You will see a result that is similiar to this:
 ```
 Take note of the **"blocks"** field.  It should be around 8 to 10 thousand at this point, if it's higher, don't worry, you were just slow to enter this command after the previous one and your masternode service is syncing with the network, everything is ok.  
 
-i.  **Check the masternode status.** Now we'll check the masternode status.  Run the command below.  
+h.  **Check the masternode status.** Now we'll check the masternode status.  Run the command below.  
 ```
 Apollond masternode status
 ```
@@ -252,7 +262,6 @@ a. Download the wallet from here: [Apollon Mac Wallet](https://github.com/apollo
 b. Open the Apollon Desktop Wallet.  
 
 **IF YOU WANT TO STAKE COINS TO RECEIVE 100% OF THE REWARDS AVAILABLE**
-
 
 a.  Setup a windows VPS on [Virmach](https://virmach.com/windows-remote-desktop-vps/)
 
