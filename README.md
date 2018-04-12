@@ -107,9 +107,9 @@ Please return to the guide (https://github.com/fathertime100/apollon) and contin
 ===================================================================================================
 ```
 
-e. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
+f. **Save this information.** Copy and paste this information into your **Apollon Masternode Reference Document** under the header MASTERNODE SERVICE DETAILS.
 
-f. **Check the server status.** Next we'll check the status of the server.  Run the command below.  
+g. **Check the server status.** Next we'll check the status of the server.  Run the command below.  
 ```
 systemctl status Apollon
 ```
@@ -127,7 +127,7 @@ Mar 14 19:19:03 APOLLON-2 systemd[1]: Started Apollon service.
 ```
 As long as your server says **"Active: active (running)"**, you're good to go.  
 
-g.  **Check the servers network connectivity.** Next, we'll verify that the masternode service is syncing blocks with the network.  Run the command below.  
+h.  **Check the servers network connectivity.** Next, we'll verify that the masternode service is syncing blocks with the network.  Run the command below.  
 ```
 Apollond getinfo
 ```
@@ -158,7 +158,7 @@ You will see a result that is similiar to this:
 ```
 Take note of the **"blocks"** field.  It should be around 8 to 10 thousand at this point, if it's higher, don't worry, you were just slow to enter this command after the previous one and your masternode service is syncing with the network, everything is ok.  
 
-h.  **Check the masternode status.** Now we'll check the masternode status.  Run the command below.  
+i.  **Check the masternode status.** Now we'll check the masternode status.  Run the command below.  
 ```
 Apollond masternode status
 ```
@@ -298,7 +298,7 @@ d. Wait for 16 confirmation to settle those coins.
 
 e. Go back to RECEIVE in the wallet and create a new address, which will become your **MASTERNODE PUBLIC ADDRESS**, with the label: **APOLLON-1** (or whatever the Alias* output you recieved above was)
 
-F. **Save your MASTERNODE PUBLIC ADDRESS.** Copy and paste the address you just created to your **Apollon Masternode Reference Document** under the header **MASTERNODE PUBLIC ADDRESS**.  
+f. **Save your MASTERNODE PUBLIC ADDRESS.** Copy and paste the address you just created to your **Apollon Masternode Reference Document** under the header **MASTERNODE PUBLIC ADDRESS**.  
 
 g. Go back to your wallet and click on SEND.
 
@@ -599,7 +599,7 @@ All donations are highly appreciated!
 
 ***
 **Acknowledgements**
-This guide was adopted from Zoldur's script and developed to support my video of this process on [Youtube](https://).  Thank-you Zoldur for doing most of the heavy lifting on the script.  Also thank-you to the entire Apollon team on Discord who helped get through the weeds on setting this up.  Specifically, iTzShowTime, Visco, zoldur, XAP_MAX and MorpheusM, thanks team!
+This guide was adopted from Zoldur's script and developed to support my video of this process.  Thank-you Zoldur for doing most of the heavy lifting on the script.  Also thank-you to the entire Apollon team on Discord who helped get through the weeds on setting this up.
 ***
 **DISCLAIMER:** The references contained herein are for information purposes only.  This guide is not intended to be investment advice.  Seek a duly licensed professional for investment advice before investing in any masternode.
 
