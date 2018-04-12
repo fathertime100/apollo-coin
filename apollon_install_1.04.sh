@@ -297,9 +297,7 @@ function important_information() {
  echo -e " "
  echo -e "==================================================================================================="
  echo -e " "
- echo -e "Next step:"
- echo -e " "
- echo -e "Return to the guide (https://github.com/fathertime100/apollon) and continue with step 2f."
+ echo -e "Please return to the guide (https://github.com/fathertime100/apollon) and continue with step 2f."
  echo -e " "
  echo -e "==================================================================================================="
 
