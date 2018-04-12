@@ -36,7 +36,9 @@ We will start by purchasing 25,100 Apollo Coins to pay for our stake in the mast
 a.  **Setup an exchange account.**  Set up an exchange account on one of the following three exchanges:
 
    i.  [Coinexchange](https://www.coinexchange.io/market/XAP/BTC)
+
    ii. [Graviex](https://graviex.net/markets/xapbtc)
+
    iii.[CryptoBridge](https://wallet.crypto-bridge.org/market/BRIDGE.XAP_BRIDGE.BTC)
     
 b.  **Calculate how much BTC you need to transfer.**  Look up the current price of [BTC to XAP](https://www.coinexchange.io/market/XAP/BTC) and calculate how much BTC you'll need to transfer to the exchange in order to purchase **25,100 XAP**.  
