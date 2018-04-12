@@ -35,7 +35,7 @@ function download_node() {
 
 
 function configure_systemd() {
-  cat << EOF > /etc/systemd/system/$COIN_NAME.service
+cat << EOF > /etc/systemd/system/$COIN_NAME.service
 [Unit]
 Description=$COIN_NAME service
 After=network.target
@@ -47,8 +47,8 @@ Group=root
 Type=forking
 #PIDFile=$CONFIGFOLDER/$COIN_NAME.pid
 
-ExecStart=$COIN_DAEMON -daemon -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER
-ExecStop=-$COIN_CLI -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER stop
+ExecStart=$COIN_PATH$COIN_DAEMON -daemon -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER
+ExecStop=-$COIN_PATH$COIN_CLI -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER stop
 
 Restart=always
 PrivateTmp=true
@@ -93,9 +93,6 @@ EOF
 }
 
 function create_key() {
-  echo -e "Press enter to generate your ${RED}Masternode Private Key${NC}:"
-  read -t 10 -e COINKEY
-  if [[ -z "$COINKEY" ]]; then
   $COIN_PATH$COIN_DAEMON -daemon
   sleep 30
   if [ -z "$(ps axo cmd:100 | grep $COIN_DAEMON)" ]; then
@@ -105,12 +102,11 @@ function create_key() {
   COINKEY=$($COIN_PATH$COIN_CLI masternode genkey)
   if [ "$?" -gt "0" ];
     then
-    echo -e "${RED}Wallet did not fully load. Reattempting to generate the Private Key${NC}"
+    echo -e "${RED}Wallet did not load properly. Reattempting to generate the Private Key${NC}"
     sleep 30
     COINKEY=$($COIN_PATH$COIN_CLI masternode genkey)
   fi
   $COIN_PATH$COIN_CLI stop
-fi
 clear
 }
 
@@ -156,7 +152,6 @@ EOF
 
 
 function enable_firewall() {
-  echo -e "Installing and setting up firewall to allow connections on port ${GREEN}$COIN_PORT${NC}"
   ufw allow $COIN_PORT/tcp comment "$COIN_NAME MN port" >/dev/null
   ufw allow $RPC_PORT/tcp comment "$COIN_NAME RPC port" >/dev/null
   ufw allow ssh comment "SSH" >/dev/null 2>&1
@@ -216,25 +211,25 @@ fi
 }
 
 function prepare_system() {
-echo -e "Preparing the system to install an ${GREEN}$COIN_NAME${NC}"
-echo -e "masternode service on this Linux Ubuntu 16.04 server."
+echo -e "Preparing the system to install an ${GREEN}$COIN_NAME Masternode Service${NC} on this Linux Ubuntu 16.04 server."
 echo -e " "
-echo -e "This entire process will take around 5 minutes to complete."
+echo -e "This installation will take around 10 minutes to complete."
 echo -e " "
-echo -e "Leave this terminal session open until you are prompted to"
-echo -e "generate your private key."
+echo -e "Leave this terminal session open until you are prompted to generate your private key."
 echo -e " "
-echo -e "The next prompt will occur shortly.  Please wait."
+echo -e "The next prompt will occur in about 5 minutes.  Please wait."
 DEBIAN_FRONTEND=noninteractive apt-get install pv > /dev/null 2>&1
 apt-get update >/dev/null 2>&1 | pv
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1 | pv
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
 apt install -y software-properties-common >/dev/null 2>&1 | pv
-echo -e "${GREEN}Adding the Bitcoin PPA repository"
+echo -e "${GREEN}Adding the Bitcoin PPA repository${NC}"
 apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1 | pv
-echo -e "Continuing to install the required software packages.${NC}"
+echo -e " "
+echo -e "Continuing to install the required software packages."
 echo -e " "
 echo -e "Please wait."
+echo -e " "
 apt-get update >/dev/null 2>&1 | pv
 apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" make software-properties-common \
 build-essential libtool autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev \
@@ -279,9 +274,10 @@ function create_swap() {
 
 
 function important_information() {
+ clear
  echo -e ""
  echo -e "==================================================================================================="
- echo -e " ${GREEN}CONGRATULATIONS!!!${NC} Your ${GREEN}$COIN_NAME${NC} masternode service is running and listening on port ${GREEN}$COIN_PORT${NC}" 
+ echo -e " ${GREEN}CONGRATULATIONS!!!${NC} Your ${GREEN}$COIN_NAME${NC} masternode service has been installed and is running." 
  echo -e "==================================================================================================="
  echo -e " "
  echo -e "MASTERNODE SERVICE DETAILS"
@@ -292,10 +288,16 @@ function important_information() {
  echo -e " "
  echo -e "The $COIN_NAME masternode service configuration file is located at: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
  echo -e " "
+ echo -e "The firewall has been configured to allow connections on port ${GREEN}$COIN_PORT${NC}"
+ echo -e " "
  echo -e "==================================================================================================="
  echo -e " "
- echo -e "Please copy and paste the above data into your ${GREEN}$COIN_NAME${NC} Masternode Reference Document under the header"
- echo -e "MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation."
+ echo -e "Please copy and paste the above data into your ${GREEN}$COIN_NAME${NC} Masternode Reference Document under the"
+ echo -e "header MASTERNODE SERVICE DETAILS.  You will need this information to complete your installation."
+ echo -e ""
+ echo -e ""
+ echo -e ""
+ echo -e ""
  echo -e ""
 }
 
