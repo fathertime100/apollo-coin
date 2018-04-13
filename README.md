@@ -304,7 +304,7 @@ f. **Save your MASTERNODE PUBLIC ADDRESS.** Copy and paste the address you just 
 
 g. Go back to your wallet and click on SEND.
 
-h. Paste the same address into the Pay To: field and the label MN1 will automatically populate.  In amount, enter 25,000 XAP.  
+h. Paste the same address into the Pay To: field and the label will automatically populate.  In amount, enter 25,000 XAP.  
 
 **IMPORTANT:** YOU CANNOT MAKE MULTIPLE DEPOSITS TO YOUR MASTERNODE PUBLIC ADDRESS AND HAVE IT COUNT AS A STAKE.  FOR EXAMPLE, MAKING TWO DEPOSITS, ONE OF 10,000 AND ANOTHER OF 15,000 WILL NOT COUNT AS YOUR MASTERNODE STAKE.  IT HAS TO BE ONE SINGLE DEPOSIT OF 25,000 XAP.  There is a work around if you do make this mistake, it involves making another transaction to yourself after you've made multiple deposits.  Please contact me directly if you make this mistake and I can help you with this solution.  
 
