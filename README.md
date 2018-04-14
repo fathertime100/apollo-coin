@@ -178,7 +178,7 @@ The **"status"** of your masternode will be one of the following:
 
 0 = Your masternode has not been processed by the network yet.  Please wait, this could take up to 24 hours to complete.
 
-1 = Your masternode has been successfully enabled with a local "hot-wallet" setup.  It is actively participating on the XAP blockchain and there is no need to make any further action or checks on the block explorer or !mn bot to see if it is operating, you can rest assured that it is operating correctly.  After any start command is issued from your wallet, please wait 96 hours (4 days) for the masternode to show up on the xap.overemo.com explorer and on the !mn bot on our discord channel.  This includes clicking start again from your wallet after your masternode was previously enabled.
+1 = Your masternode has been successfully enabled with a local "hot-wallet" installed on this computer.  It is actively participating on the XAP blockchain and there is no need to make any further action or checks on the block explorer or !mn bot to see if it is operating, you can rest assured that it is operating correctly.  After any start command is issued from your wallet, please wait 96 hours (4 days) for the masternode to show up on the xap.overemo.com explorer and on the !mn bot on our discord channel.  This includes clicking start again from your wallet after your masternode was previously enabled.
 
 2 = Your masternode service is inactive and disconnected from your wallet, please start the masternode from your wallet.
 
@@ -194,7 +194,7 @@ The **"status"** of your masternode will be one of the following:
 
 8 = Your masternode is syncing to the network.  Please wait, this could take anywhere between 5 and 60 minutes.  
 
-9 = Your masternode has been successfully enabled remotely from a "cold-wallet" setup on a remote computer.  It is actively participating on the XAP blockchain and there is no need to make any further action or checks on the block explorer or !mn bot to see if it is operating, you can rest assured that it is operating correctly.  It could take anywhere between 5 to 60 minutes for it's status to update in your "cold-wallet" on your remote computer.  After any start command is issued from your wallet, please wait 96 hours (4 days) for the masternode to show up on the xap.overemo.com explorer and on the !mn bot on our discord channel.  This includes clicking start again from your wallet after your masternode was previously enabled.
+9 = Your masternode has been successfully enabled remotely from a "cold-wallet" installed on a remote computer.  It is actively participating on the XAP blockchain and there is no need to make any further action or checks on the block explorer or !mn bot to see if it is operating, you can rest assured that it is operating correctly.  It could take anywhere between 5 to 60 minutes for it's status to update in your "cold-wallet" on your remote computer.  After any start command is issued from your wallet, please wait 96 hours (4 days) for the masternode to show up on the xap.overemo.com explorer and on the !mn bot on our discord channel.  This includes clicking start again from your wallet after your masternode was previously enabled.
 
 Your masternode should currently have a status of either 8 or 2.  
 
