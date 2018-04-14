@@ -186,7 +186,10 @@ The **"status"** of your masternode will be one of the following:
 
 4 = Your masternode transaction hasn't reached the minimum of 15 confirmations.  Please refer to the number of confirmations in your wallet, this typically takes between 10 to 30 minutes to complete.  If it is not completing, please submit a ticket to the exchange that you sent the coins from.
 
+5 = NOT USED
+
 6 = Your masternode port is closed.
+
 7 = Your masternode port is open.
 
 8 = Your masternode is syncing to the network.  Please wait, this could take anywhere between 5 and 60 minutes.  
@@ -412,7 +415,10 @@ Here is the list of possible Masternode statuses (note this is the same list as 
 
 4 = Your masternode transaction hasn't reached the minimum of 15 confirmations.  Please refer to the number of confirmations in your wallet, this typically takes between 10 to 30 minutes to complete.  If it is not completing, please submit a ticket to the exchange that you sent the coins from.
 
+5 = NOT USED
+
 6 = Your masternode port is closed.
+
 7 = Your masternode port is open.
 
 8 = Your masternode is syncing to the network.  Please wait, this could take anywhere between 5 and 60 minutes.  
