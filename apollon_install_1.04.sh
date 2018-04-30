@@ -220,21 +220,21 @@ echo -e " "
 echo -e "The next prompt will occur in about 5 minutes.  Please wait."
 DEBIAN_FRONTEND=noninteractive apt-get install pv > /dev/null 2>&1
 apt-get update >/dev/null 2>&1 | pv
-DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1 | pv
+DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
-apt install -y software-properties-common >/dev/null 2>&1 | pv
+apt install -y software-properties-common >/dev/null 2>&1
 echo -e "${GREEN}Adding the Bitcoin PPA repository${NC}"
-apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1 | pv
+apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1
 echo -e " "
 echo -e "Continuing to install the required software packages."
 echo -e " "
 echo -e "Please wait."
 echo -e " "
-apt-get update >/dev/null 2>&1 | pv
+apt-get update >/dev/null 2>&1
 apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" make software-properties-common \
 build-essential libtool autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev \
 libboost-system-dev libboost-test-dev libboost-thread-dev sudo automake git wget pwgen curl libdb4.8-dev bsdmainutils libdb4.8++-dev \
-libminiupnpc-dev libgmp3-dev ufw pkg-config libevent-dev  libdb5.3++ unzip >/dev/null 2>&1 | pv
+libminiupnpc-dev libgmp3-dev ufw pkg-config libevent-dev  libdb5.3++ unzip >/dev/null 2>&1
 if [ "$?" -gt "0" ];
   then
     echo -e "${RED}Not all required packages were installed properly. Try to install them manually by running the following commands one at a time:${NC}\n"
